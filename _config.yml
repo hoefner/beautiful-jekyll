@@ -1,19 +1,12 @@
-###########################################################
-### Welcome to Beautiful Jekyll!
-### This config file is meant for settings that affect your entire website. When you first
-### set up your website you should go through all these settings and edit them, but after
-### the initial set up you won't need to come back to this file often.
-###########################################################
-
 ############################
 # --- Required options --- #
 ############################
 
 # Name of website
-title: My website
+title: Peter Höfner
 
 # Your name to show in the footer
-author: Some Person
+author: Peter Höfner
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -21,10 +14,28 @@ author: Some Person
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  Curriculum Vitae: "cv"
+  Publications:
+#    - All Publications: "publications"
+#    - Journal Articles: "publications#pub-journal"
+#    - Conference Papers: "publications#pub-conference"
+#    - Book Chapters: "publications#pub-book_chapter"
+#    - Books: "publications#pub-book"
+#    - Technical Reports: "publications#pub-technical_report"
+#    - Miscellaneous: "publications#pub-misc"
+  Teaching: "teaching"   # single link to /teaching/ overview page
+  # Or if you want sub-links:
+  # Teaching:
+  #   - All Teaching: "teaching"
+  #   - Current: "teaching#teach-course"
+  #   - Seminars: "teaching#teach-seminar"
+
+  Hobbies/Fun:
+    - Acting: "acting"
+#  Resources:
+#    - Beautiful Jekyll: "https://beautifuljekyll.com"
+#    - Learn markdown: "https://www.markdowntutorial.com/"
+#  Author's home: "www.hoefner-online.de"
 
 ################
 # --- Logo --- #
@@ -32,7 +43,7 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/avatar-icon.png"
+avatar: "/assets/img/peter-hoefner.png"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
@@ -50,17 +61,17 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
+  email: "webmaster@hoefner-online.de"
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: "@daattali"
-  whatsapp: 15551212
+  facebook: peter.hofner.7
+  github: hoefner
+#  twitter: daattali
+#  patreon: DeanAttali
+#  youtube: "@daattali"
+#  whatsapp: 15551212
 #  medium: yourname
 #  reddit: yourname or r/yoursubreddit
-#  linkedin: daattali
+  linkedin: peter-hoefner-312a6425a
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -86,7 +97,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: This website shows the academic achievments of Peter Hoefner (currently at the Australian National University)
 
 ###########################
 # --- General options --- #
@@ -94,15 +105,15 @@ rss-description: This website is a virtual proof that I'm awesome
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
-  linkedin: true
+  twitter: false
+  facebook: false
+  linkedin: false
   vk: false
   reddit: false
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "hoefner-online.de"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
@@ -213,6 +224,7 @@ footer-hover-col: "#0085A1"
 #  repository: # GitHub username/repository eg. "daattali/beautiful-jekyll"
 #  issue-term: title   # Mapping between blog posts and GitHub issues
 #  theme: github-light # Utterances theme
+theme: beautiful-jekyll-theme
 #  label: blog-comments # Label that will be assigned to GitHub Issues created by Utterances
 
 # To use Staticman comments, uncomment the following section. You may leave the reCaptcha
@@ -260,7 +272,7 @@ date_format: "%B %-d, %Y"
 #################################################################################
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Toronto"
+timezone: "Australia/Canberra"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
@@ -284,6 +296,13 @@ defaults:
       path: "" # any file that's not a post will be a "page" layout by default
     values:
       layout: "page"
+
+collections:
+    publications:
+        output: true
+        permalink: /publications/:name
+    teaching:
+        output: false        # individual pages not needed; overview page handles display
 
 # Exclude these files from production site
 exclude:
