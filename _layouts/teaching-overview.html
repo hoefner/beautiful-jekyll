@@ -11,7 +11,7 @@ layout: page
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin: 1.5rem 0 2rem;
+    margin: 1rem 0 2rem;
     padding: 0;
     list-style: none;
   }
@@ -43,80 +43,147 @@ layout: page
     margin-bottom: 1.25rem;
     color: var(--text-col);
   }
-  .teach-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+  .teach-list { list-style: none; padding: 0; margin: 0; }
   .teach-item {
     padding: 0.65rem 0;
     border-bottom: 1px solid var(--navbar-border-col);
     line-height: 1.5;
   }
   .teach-item:last-child { border-bottom: none; }
-  .teach-title {
-    font-weight: 700;
-    color: var(--text-col);
-  }
-  .teach-title a {
-    color: var(--link-col);
-    text-decoration: none;
-  }
+  .teach-title { font-weight: 700; color: var(--text-col); }
+  .teach-title a { color: var(--link-col); text-decoration: none; }
   .teach-title a:hover { color: var(--hover-col); text-decoration: underline; }
-  .teach-meta {
-    font-size: 0.9rem;
-    color: var(--mid-col);
+  .teach-meta { font-size: 0.9rem; color: var(--mid-col); }
+  .teach-joint { font-size: 0.875rem; color: var(--mid-col); font-style: italic; }
+  .teach-school { font-size: 0.9rem; }
+  .teach-view-toggle {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1.5rem 0 0;
   }
-  .teach-joint {
+  .teach-view-btn {
+    padding: 0.3rem 1rem;
+    border: 1px solid var(--navbar-border-col);
+    border-radius: 2rem;
+    font-family: var(--header-font);
     font-size: 0.875rem;
-    color: var(--mid-col);
-    font-style: italic;
+    cursor: pointer;
+    background: var(--navbar-col);
+    color: var(--text-col);
+    transition: background 0.15s, color 0.15s;
   }
-  .teach-school {
-    font-size: 0.9rem;
+  .teach-view-btn.active {
+    background: var(--link-col);
+    color: var(--page-col);
+    border-color: var(--link-col);
+  }
+  .teach-view-btn:hover:not(.active) {
+    background: var(--hover-col);
+    color: var(--page-col);
+    border-color: var(--hover-col);
+  }
+  .teach-type-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.75rem;
+    margin-left: 0.5rem;
+    background: var(--navbar-col);
+    border: 1px solid var(--navbar-border-col);
+    color: var(--mid-col);
+    vertical-align: middle;
+    font-family: var(--header-font);
+    font-weight: normal;
   }
 </style>
 
-{% comment %} Quick-jump nav — count per type {% endcomment %}
-<ul class="teach-nav">
+<div class="teach-view-toggle">
+  <button class="teach-view-btn" onclick="switchView('type', this)">By Type</button>
+  <button class="teach-view-btn active" onclick="switchView('year', this)">By Year</button>
+</div>
+
+
+{% comment %} VIEW 1 — BY TYPE {% endcomment %}
+<div id="view-by-type" style="display:none;">
+  <ul class="teach-nav">
+    {% for typ in type_order %}
+      {% assign items = site.teaching | where: "type", typ %}
+      {% if items.size > 0 %}
+        <li><a href="#teach-{{ typ | downcase }}">{{ typ }}s ({{ items.size }})</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
   {% for typ in type_order %}
-    {% assign items = site.teaching | where: "type", typ %}
+    {% assign items = site.teaching | where: "type", typ | sort: "year" | reverse %}
     {% if items.size > 0 %}
-      <li><a href="#teach-{{ typ | downcase }}">{{ typ }}s ({{ items.size }})</a></li>
+    <section class="teach-type-section" id="teach-{{ typ | downcase }}">
+      <h2 class="teach-type-heading">{{ typ }}s</h2>
+      <ul class="teach-list">
+        {% for item in items %}
+        <li class="teach-item">
+          <div class="teach-title">
+            {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+            {% else %}{{ item.title }}{% endif %}
+          </div>
+          <div class="teach-school">{{ item.school }}</div>
+          <div class="teach-meta">
+            {{ item.term }}
+            {% if item.joint_with and item.joint_with.size > 0 %}
+              &nbsp;·&nbsp;
+              <span class="teach-joint">jointly with
+                {% for person in item.joint_with %}{{ person }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+              </span>
+            {% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
     {% endif %}
   {% endfor %}
-</ul>
+</div><!-- /view-by-type -->
 
-{% for typ in type_order %}
-  {% assign items = site.teaching | where: "type", typ | sort: "year" | reverse %}
-  {% if items.size > 0 %}
-  <section class="teach-type-section" id="teach-{{ typ | downcase }}">
-    <h2 class="teach-type-heading">{{ typ }}s</h2>
+
+{% comment %} VIEW 2 — BY YEAR {% endcomment %}
+<div id="view-by-year" style="display:block;">
+  {% assign all_items = site.teaching | sort: "year" | reverse %}
+  {% assign all_years = all_items | map: "year" | uniq %}
+
+  {% for year in all_years %}
+    <h2 class="teach-type-heading" style="margin-top:2rem;">{{ year }}</h2>
     <ul class="teach-list">
-      {% for item in items %}
-      <li class="teach-item">
-        <div class="teach-title">
-          {% if item.url %}
-            <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
-          {% else %}
-            {{ item.title }}
-          {% endif %}
-        </div>
-        <div class="teach-school">{{ item.school }}</div>
-        <div class="teach-meta">
-          {{ item.term }}
-          {% if item.joint_with and item.joint_with.size > 0 %}
-            &nbsp;·&nbsp;
-            <span class="teach-joint">jointly with
-              {% for person in item.joint_with %}
-                {{ person }}{% unless forloop.last %}, {% endunless %}
-              {% endfor %}
-            </span>
-          {% endif %}
-        </div>
-      </li>
+      {% for item in all_items %}
+        {% if item.year == year %}
+        <li class="teach-item">
+          <div class="teach-title">
+            {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+            {% else %}{{ item.title }}{% endif %}
+            <span class="teach-type-badge">{{ item.type }}</span>
+          </div>
+          <div class="teach-school">{{ item.school }}</div>
+          <div class="teach-meta">
+            {{ item.term }}
+            {% if item.joint_with and item.joint_with.size > 0 %}
+              &nbsp;·&nbsp;
+              <span class="teach-joint">jointly with
+                {% for person in item.joint_with %}{{ person }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+              </span>
+            {% endif %}
+          </div>
+        </li>
+        {% endif %}
       {% endfor %}
     </ul>
-  </section>
-  {% endif %}
-{% endfor %}
+  {% endfor %}
+</div><!-- /view-by-year -->
+
+
+<script>
+function switchView(mode, btn) {
+  document.getElementById('view-by-type').style.display = (mode === 'type') ? 'block' : 'none';
+  document.getElementById('view-by-year').style.display = (mode === 'year') ? 'block' : 'none';
+  document.querySelectorAll('.teach-view-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+</script>

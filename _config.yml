@@ -8,6 +8,7 @@ title: Peter Höfner
 # Your name to show in the footer
 author: Peter Höfner
 
+
 ###############################################
 # --- List of links in the navigation bar --- #
 ###############################################
@@ -15,7 +16,7 @@ author: Peter Höfner
 navbar-links:
   About Me: "aboutme"
   Curriculum Vitae: "cv"
-  Publications:
+  Publications: "publications"
 #    - All Publications: "publications"
 #    - Journal Articles: "publications#pub-journal"
 #    - Conference Papers: "publications#pub-conference"
@@ -144,20 +145,26 @@ navbar-var-length: false
 ######################################
 # --- Colours / background image --- #
 ######################################
+# Paste these lines into _config.yml at the top level
 
-# Personalize the colours in your website. Colour values can be any valid CSS colour
+# Page & text
+page-col: "#FFFFFF"          # white page background
+text-col: "#222222"          # near-black body text
 
-page-col: "#FFFFFF"
-text-col: "#404040"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
-navbar-border-col: "#DDDDDD"
-footer-col: "#EAEAEA"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
-footer-hover-col: "#0085A1"
+# Links & headings
+link-col: "#2c5f8a"          # steel blue — links and heading accents
+hover-col: "#1e4466"         # darker navy on hover
+
+# Navbar (top bar)
+navbar-col: "#2c5f8a"        # steel blue navbar background
+navbar-text-col: "#FFFFFF"   # white text on navbar
+navbar-border-col: "#1e4466" # darker navy border under navbar
+
+# Footer
+footer-col: "#2c5f8a"        # steel blue footer, matching navbar
+footer-text-col: "#b8d4ee"   # pale blue-grey footer text
+footer-link-col: "#FFFFFF"   # white footer links
+footer-hover-col: "#d0e8f8"  # very light blue hover in footer
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour

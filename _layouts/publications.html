@@ -4,25 +4,43 @@ layout: page
 
 {{ content }}
 
-{% comment %}
-  Type definitions: display label, venue_type key, order
-{% endcomment %}
 {% assign type_order = "journal,conference,book_chapter,book,technical_report,misc" | split: "," %}
 
-{% assign type_labels_journal        = "Journal Articles" %}
-{% assign type_labels_conference     = "Conference Papers" %}
-{% assign type_labels_book_chapter   = "Book Chapters" %}
-{% assign type_labels_book           = "Books" %}
-{% assign type_labels_technical_report = "Technical Reports" %}
-{% assign type_labels_misc           = "Miscellaneous" %}
-
 <style>
+  /* ── View toggle ── */
+  .pub-view-toggle {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1.5rem 0 0;
+  }
+  .pub-view-btn {
+    padding: 0.3rem 1rem;
+    border: 1px solid var(--navbar-border-col);
+    border-radius: 2rem;
+    font-family: var(--header-font);
+    font-size: 0.875rem;
+    cursor: pointer;
+    background: var(--navbar-col);
+    color: var(--text-col);
+    transition: background 0.15s, color 0.15s;
+  }
+  .pub-view-btn.active {
+    background: var(--link-col);
+    color: var(--page-col);
+    border-color: var(--link-col);
+  }
+  .pub-view-btn:hover:not(.active) {
+    background: var(--hover-col);
+    color: var(--page-col);
+    border-color: var(--hover-col);
+  }
+
   /* ── Type navigation pills ── */
   .pub-type-nav {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin: 1.5rem 0 2rem;
+    margin: 1rem 0 2rem;
     padding: 0;
     list-style: none;
   }
@@ -45,10 +63,8 @@ layout: page
     text-decoration: none;
   }
 
-  /* ── Section headings ── */
-  .pub-type-section {
-    margin-top: 2.5rem;
-  }
+  /* ── Section & year headings ── */
+  .pub-type-section { margin-top: 2.5rem; }
   .pub-type-heading {
     font-family: var(--header-font);
     font-size: 1.5rem;
@@ -67,70 +83,46 @@ layout: page
   }
 
   /* ── Publication list ── */
-  .pub-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+  .pub-list { list-style: none; padding: 0; margin: 0; }
   .pub-item {
     padding: 0.75rem 0;
     border-bottom: 1px solid var(--navbar-border-col);
     line-height: 1.5;
   }
-  .pub-item:last-child {
-    border-bottom: none;
-  }
-  .pub-title {
-    font-weight: 700;
-    color: var(--text-col);
-  }
-  .pub-authors {
-    font-size: 0.95rem;
+  .pub-item:last-child { border-bottom: none; }
+  .pub-title { font-weight: 700; color: var(--text-col); }
+  .pub-authors { font-size: 0.95rem; color: var(--mid-col); margin: 0.1rem 0; }
+  .pub-authors .self { font-weight: 700; color: var(--text-col); }
+  .pub-venue { font-size: 0.95rem; font-style: italic; }
+  .pub-type-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-style: normal;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.75rem;
+    margin-left: 0.5rem;
+    background: var(--navbar-col);
+    border: 1px solid var(--navbar-border-col);
     color: var(--mid-col);
-    margin: 0.1rem 0;
+    vertical-align: middle;
+    font-family: var(--header-font);
   }
-  /* Highlight Peter's name */
-  .pub-authors .self {
-    font-weight: 700;
-    color: var(--text-col);
-  }
-  .pub-venue {
-    font-size: 0.95rem;
-    font-style: italic;
-  }
-  .pub-meta {
-    font-size: 0.875rem;
-    color: var(--mid-col);
-  }
-  .pub-links {
-    margin-top: 0.35rem;
-    font-size: 0.875rem;
-  }
+  .pub-links { margin-top: 0.35rem; font-size: 0.875rem; }
   .pub-links a {
     margin-right: 0.75rem;
     color: var(--link-col);
     text-decoration: none;
   }
-  .pub-links a:hover {
-    color: var(--hover-col);
-    text-decoration: underline;
-  }
+  .pub-links a:hover { color: var(--hover-col); text-decoration: underline; }
 
   /* ── BibTeX expand ── */
   .bibtex-toggle {
-    background: none;
-    border: none;
-    padding: 0;
-    font-size: 0.875rem;
-    color: var(--link-col);
-    cursor: pointer;
-    font-family: var(--header-font);
+    background: none; border: none; padding: 0;
+    font-size: 0.875rem; color: var(--link-col);
+    cursor: pointer; font-family: var(--header-font);
     margin-right: 0.75rem;
   }
-  .bibtex-toggle:hover {
-    color: var(--hover-col);
-    text-decoration: underline;
-  }
+  .bibtex-toggle:hover { color: var(--hover-col); text-decoration: underline; }
   .bibtex-block {
     display: none;
     margin-top: 0.5rem;
@@ -144,15 +136,46 @@ layout: page
     overflow-x: auto;
     color: var(--text-col);
   }
-  .bibtex-block.open {
-    display: block;
-  }
+  .bibtex-block.open { display: block; }
+
+  /* ── View containers ── */
+  #view-by-type { display: none;  }
+  #view-by-year { display: block; }
 </style>
 
-{% comment %} ── Quick-jump pill nav ── {% endcomment %}
-<ul class="pub-type-nav">
+{% comment %} ── View toggle buttons ── {% endcomment %}
+<div class="pub-view-toggle">
+  <button class="pub-view-btn"        onclick="switchView('type', this)">By Type</button>
+  <button class="pub-view-btn active" onclick="switchView('year', this)">By Year</button>
+</div>
+
+{% comment %} ── Shared pub entry macro ── {% endcomment %}
+{% capture pub_entry_template %}{% endcapture %}
+
+
+{% comment %} ════════════════════════════════
+   VIEW 1 — BY TYPE
+════════════════════════════════ {% endcomment %}
+<div id="view-by-type">
+
+  <ul class="pub-type-nav">
+    {% for type_key in type_order %}
+      {% assign pubs_of_type = site.publications | where: "venue_type", type_key %}
+      {% if pubs_of_type.size > 0 %}
+        {% if type_key == "journal" %}{% assign label = "Journal Articles" %}
+        {% elsif type_key == "conference" %}{% assign label = "Conference Papers" %}
+        {% elsif type_key == "book_chapter" %}{% assign label = "Book Chapters" %}
+        {% elsif type_key == "book" %}{% assign label = "Books" %}
+        {% elsif type_key == "technical_report" %}{% assign label = "Technical Reports" %}
+        {% elsif type_key == "misc" %}{% assign label = "Miscellaneous" %}
+        {% endif %}
+        <li><a href="#pub-{{ type_key }}">{{ label }} ({{ pubs_of_type.size }})</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
   {% for type_key in type_order %}
-    {% assign pubs_of_type = site.publications | where: "venue_type", type_key %}
+    {% assign pubs_of_type = site.publications | where: "venue_type", type_key | sort: "year" | reverse %}
     {% if pubs_of_type.size > 0 %}
       {% if type_key == "journal" %}{% assign label = "Journal Articles" %}
       {% elsif type_key == "conference" %}{% assign label = "Conference Papers" %}
@@ -161,88 +184,128 @@ layout: page
       {% elsif type_key == "technical_report" %}{% assign label = "Technical Reports" %}
       {% elsif type_key == "misc" %}{% assign label = "Miscellaneous" %}
       {% endif %}
-      <li><a href="#pub-{{ type_key }}">{{ label }} ({{ pubs_of_type.size }})</a></li>
+
+      <section class="pub-type-section" id="pub-{{ type_key }}">
+        <h2 class="pub-type-heading">{{ label }}</h2>
+        {% assign years = pubs_of_type | map: "year" | uniq %}
+        {% for year in years %}
+          <h3 class="pub-year-heading">{{ year }}</h3>
+          <ul class="pub-list">
+            {% for pub in pubs_of_type %}
+              {% if pub.year == year %}
+              <li class="pub-item" id="{{ pub.id }}">
+                <div class="pub-title">{{ pub.title }}</div>
+                <div class="pub-authors">
+                  {% for author in pub.authors %}
+                    {% if author contains "Höfner" or author contains "Hofner" %}
+                      <span class="self">{{ author }}</span>{% unless forloop.last %}, {% endunless %}
+                    {% else %}
+                      {{ author }}{% unless forloop.last %}, {% endunless %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                <div class="pub-venue">
+                  {% if pub.venue_type == "journal" and pub.journal %}
+                    {{ pub.journal }}
+                    {% if pub.volume %}, vol. {{ pub.volume }}{% endif %}
+                    {% if pub.number %}, no. {{ pub.number }}{% endif %}
+                    {% if pub.pages %}, pp. {{ pub.pages }}{% endif %}
+                  {% elsif pub.booktitle %}
+                    {{ pub.booktitle }}{% if pub.pages %} (pp. {{ pub.pages }}){% endif %}
+                  {% endif %}
+                  {% if pub.publisher %} — {{ pub.publisher }}{% endif %}
+                  {% if pub.series %} ({{ pub.series }}{% if pub.volume %} {{ pub.volume }}{% endif %}){% endif %}
+                </div>
+                <div class="pub-links">
+                  {% if pub.bibtex %}<button class="bibtex-toggle" onclick="toggleBibtex(this)">BibTeX</button>{% endif %}
+                  {% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener">Link / DOI</a>{% endif %}
+                  {% if pub.pdf %}<a href="{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+                </div>
+                {% if pub.bibtex %}<pre class="bibtex-block">{{ pub.bibtex }}</pre>{% endif %}
+              </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </section>
     {% endif %}
   {% endfor %}
-</ul>
 
-{% comment %} ── Sections: one per type ── {% endcomment %}
-{% for type_key in type_order %}
-  {% assign pubs_of_type = site.publications | where: "venue_type", type_key | sort: "year" | reverse %}
-  {% if pubs_of_type.size > 0 %}
+</div><!-- /view-by-type -->
 
-    {% if type_key == "journal" %}{% assign label = "Journal Articles" %}
-    {% elsif type_key == "conference" %}{% assign label = "Conference Papers" %}
-    {% elsif type_key == "book_chapter" %}{% assign label = "Book Chapters" %}
-    {% elsif type_key == "book" %}{% assign label = "Books" %}
-    {% elsif type_key == "technical_report" %}{% assign label = "Technical Reports" %}
-    {% elsif type_key == "misc" %}{% assign label = "Miscellaneous" %}
-    {% endif %}
 
-    <section class="pub-type-section" id="pub-{{ type_key }}">
-      <h2 class="pub-type-heading">{{ label }}</h2>
+{% comment %} ════════════════════════════════
+   VIEW 2 — BY YEAR
+════════════════════════════════ {% endcomment %}
+<div id="view-by-year">
 
-      {% assign years = pubs_of_type | map: "year" | uniq %}
-      {% for year in years %}
-        <h3 class="pub-year-heading">{{ year }}</h3>
-        <ul class="pub-list">
-          {% for pub in pubs_of_type %}
-            {% if pub.year == year %}
-            <li class="pub-item" id="{{ pub.id }}">
+  {% assign all_pubs = site.publications | sort: "year" | reverse %}
+  {% assign all_years = all_pubs | map: "year" | uniq %}
 
-              <div class="pub-title">{{ pub.title }}</div>
+  <p style="margin: 1rem 0 1.5rem; font-size:0.9rem; color:var(--mid-col);">
+    {{ all_pubs.size }} publications total
+  </p>
 
-              <div class="pub-authors">
-                {% for author in pub.authors %}
-                  {% if author contains "Höfner" or author contains "Hofner" or author contains "Höfner" %}
-                    <span class="self">{{ author }}</span>{% unless forloop.last %}, {% endunless %}
-                  {% else %}
-                    {{ author }}{% unless forloop.last %}, {% endunless %}
-                  {% endif %}
-                {% endfor %}
-              </div>
-
-              <div class="pub-venue">
-                {% if pub.venue_type == "journal" and pub.journal %}
-                  {{ pub.journal }}
-                  {% if pub.volume %}, vol. {{ pub.volume }}{% endif %}
-                  {% if pub.number %}, no. {{ pub.number }}{% endif %}
-                  {% if pub.pages %}, pp. {{ pub.pages }}{% endif %}
-                {% elsif pub.booktitle %}
-                  {{ pub.booktitle }}
-                  {% if pub.pages %} (pp. {{ pub.pages }}){% endif %}
-                {% endif %}
-                {% if pub.publisher %} — {{ pub.publisher }}{% endif %}
-                {% if pub.series %} ({{ pub.series }}{% if pub.volume %} {{ pub.volume }}{% endif %}){% endif %}
-              </div>
-
-              <div class="pub-links">
-                {% if pub.bibtex %}
-                  <button class="bibtex-toggle" onclick="toggleBibtex(this)">BibTeX</button>
-                {% endif %}
-                {% if pub.url %}
-                  <a href="{{ pub.url }}" target="_blank" rel="noopener">Link / DOI</a>
-                {% endif %}
-                {% if pub.pdf %}
-                  <a href="{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>
-                {% endif %}
-              </div>
-
-              {% if pub.bibtex %}
-                <pre class="bibtex-block">{{ pub.bibtex }}</pre>
-              {% endif %}
-
-            </li>
+  {% for year in all_years %}
+    <h2 class="pub-type-heading" style="margin-top:2rem;" id="year-{{ year }}">{{ year }}</h2>
+    <ul class="pub-list">
+      {% for pub in all_pubs %}
+        {% if pub.year == year %}
+        <li class="pub-item" id="by-year-{{ pub.id }}">
+          <div class="pub-title">
+            {{ pub.title }}
+            {% if pub.venue_type == "journal" %}{% assign badge = "Journal" %}
+            {% elsif pub.venue_type == "conference" %}{% assign badge = "Conference" %}
+            {% elsif pub.venue_type == "book_chapter" %}{% assign badge = "Book Chapter" %}
+            {% elsif pub.venue_type == "book" %}{% assign badge = "Book" %}
+            {% elsif pub.venue_type == "technical_report" %}{% assign badge = "Tech Report" %}
+            {% elsif pub.venue_type == "misc" %}{% assign badge = pub.subtype | default: "Misc" %}
             {% endif %}
-          {% endfor %}
-        </ul>
+            <span class="pub-type-badge">{{ badge }}</span>
+          </div>
+          <div class="pub-authors">
+            {% for author in pub.authors %}
+              {% if author contains "Höfner" or author contains "Hofner" %}
+                <span class="self">{{ author }}</span>{% unless forloop.last %}, {% endunless %}
+              {% else %}
+                {{ author }}{% unless forloop.last %}, {% endunless %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="pub-venue">
+            {% if pub.venue_type == "journal" and pub.journal %}
+              {{ pub.journal }}
+              {% if pub.volume %}, vol. {{ pub.volume }}{% endif %}
+              {% if pub.number %}, no. {{ pub.number }}{% endif %}
+              {% if pub.pages %}, pp. {{ pub.pages }}{% endif %}
+            {% elsif pub.booktitle %}
+              {{ pub.booktitle }}{% if pub.pages %} (pp. {{ pub.pages }}){% endif %}
+            {% endif %}
+            {% if pub.publisher %} — {{ pub.publisher }}{% endif %}
+            {% if pub.series %} ({{ pub.series }}{% if pub.volume %} {{ pub.volume }}{% endif %}){% endif %}
+          </div>
+          <div class="pub-links">
+            {% if pub.bibtex %}<button class="bibtex-toggle" onclick="toggleBibtex(this)">BibTeX</button>{% endif %}
+            {% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener">Link / DOI</a>{% endif %}
+            {% if pub.pdf %}<a href="{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+          </div>
+          {% if pub.bibtex %}<pre class="bibtex-block">{{ pub.bibtex }}</pre>{% endif %}
+        </li>
+        {% endif %}
       {% endfor %}
-    </section>
+    </ul>
+  {% endfor %}
 
-  {% endif %}
-{% endfor %}
+</div><!-- /view-by-year -->
+
 
 <script>
+function switchView(mode, btn) {
+  document.getElementById('view-by-type').style.display = (mode === 'type') ? 'block' : 'none';
+  document.getElementById('view-by-year').style.display = (mode === 'year') ? 'block' : 'none';
+  document.querySelectorAll('.pub-view-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+}
 function toggleBibtex(btn) {
   var pre = btn.closest('.pub-item').querySelector('.bibtex-block');
   var open = pre.classList.toggle('open');
