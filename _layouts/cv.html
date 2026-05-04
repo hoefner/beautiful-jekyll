@@ -1,0 +1,343 @@
+---
+layout: page
+---
+
+{{ content }}
+
+<style>
+  /* ── Section headings ── */
+  .cv-section { margin-top: 2.5rem; }
+  .cv-heading {
+    font-family: var(--header-font);
+    font-size: 1.4rem;
+    font-weight: 800;
+    border-bottom: 2px solid var(--navbar-border-col);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.2rem;
+    color: var(--link-col);
+  }
+
+  /* ── Table layout used for timeline entries ── */
+  .cv-table { width: 100%; border-collapse: collapse; margin-bottom: 0.5rem; }
+  .cv-table tr { border-bottom: 1px solid var(--navbar-border-col); }
+  .cv-table tr:last-child { border-bottom: none; }
+  .cv-table td { padding: 0.55rem 0.5rem 0.55rem 0; vertical-align: top; font-size: 0.95rem; line-height: 1.5; }
+  .cv-date { width: 11rem; color: var(--mid-col); white-space: nowrap; }
+  .cv-body strong { display: block; font-weight: 700; color: var(--text-col); }
+  .cv-body .inst { font-style: italic; color: var(--mid-col); font-size: 0.9rem; }
+  .cv-body a { color: var(--link-col); text-decoration: none; }
+  .cv-body a:hover { color: var(--hover-col); text-decoration: underline; }
+
+  /* ── Awards ── */
+  .cv-award { padding: 0.4rem 0; border-bottom: 1px solid var(--navbar-border-col); }
+  .cv-award:last-child { border-bottom: none; }
+  .cv-award-year { font-weight: 700; color: var(--link-col); margin-right: 0.75rem; }
+
+  /* ── Grants ── */
+  .grant-item { padding: 0.5rem 0; border-bottom: 1px solid var(--navbar-border-col); font-size: 0.95rem; }
+  .grant-item:last-child { border-bottom: none; }
+  .grant-title { font-weight: 700; }
+  .grant-meta { color: var(--mid-col); font-size: 0.875rem; }
+
+  /* ── Service ── */
+  .svc-item { padding: 0.4rem 0; border-bottom: 1px solid var(--navbar-border-col); font-size: 0.95rem; line-height: 1.5; }
+  .svc-item:last-child { border-bottom: none; }
+  .svc-role { font-weight: 700; margin-right: 0.5rem; }
+
+  /* ── PC list (collapsed) ── */
+  .pc-toggle {
+    background: none; border: none; padding: 0;
+    font-size: 0.875rem; color: var(--link-col); cursor: pointer;
+    font-family: var(--header-font);
+  }
+  .pc-toggle:hover { color: var(--hover-col); text-decoration: underline; }
+  .pc-block {
+    display: none; margin-top: 0.5rem;
+    background: var(--navbar-col);
+    border: 1px solid var(--navbar-border-col);
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem; line-height: 1.8;
+  }
+  .pc-block.open { display: block; }
+
+  /* ── Research interests ── */
+  .ri-section { margin-bottom: 0.75rem; }
+  .ri-top { font-weight: 700; color: var(--text-col); margin-bottom: 0.25rem; }
+  .ri-sub { padding-left: 1.25rem; color: var(--mid-col); font-size: 0.9rem; line-height: 1.7; }
+</style>
+
+
+<!-- ══════════════════════════════════════════════
+     1. SUMMARY
+════════════════════════════════════════════════ -->
+<section class="cv-section">
+  <h2 class="cv-heading">Summary</h2>
+  <p>Dr. Peter Höfner is an Associate Professor at the Australian National University (ANU) and Associate Director of Education in the School of Computing. His research transforms how software systems are developed — ensuring their trustworthiness and security to the highest degree possible: the certainty of mathematical proof. He is a world leader in the formal analysis of protocols used by emergency services worldwide, and has led collaborative research with Australia's Defence Science and Technology Group and DARPA. He is the recipient of DARPA's prestigious <em>Game Changer Award</em> (2023).</p>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     2. FORMAL QUALIFICATIONS
+════════════════════════════════════════════════ -->
+<section class="cv-section">
+  <h2 class="cv-heading">Formal Qualifications</h2>
+  <table class="cv-table">
+    <tr>
+      <td class="cv-date">July 2009</td>
+      <td class="cv-body">
+        <strong>Doctorate (Dr. rer. nat.), <em>summa cum laude</em></strong>
+        <span class="inst">University of Augsburg, Germany</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="cv-date">Oct 2003</td>
+      <td class="cv-body">
+        <strong>Advanced Degree in Mathematics (Diplom-Mathematiker)</strong>
+        <span class="inst">University of Augsburg, Germany &mdash; Mathematics (major), Computer Science (minor), with high distinction</span>
+      </td>
+    </tr>
+  </table>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     3. APPOINTMENTS
+════════════════════════════════════════════════ -->
+<section class="cv-section">
+  <h2 class="cv-heading">Appointments</h2>
+  <table class="cv-table">
+    <tr>
+      <td class="cv-date">since Feb 2020</td>
+      <td class="cv-body">
+        <strong>Associate Professor (tenured 2023)</strong>
+        <span class="inst"><a href="https://cecs.anu.edu.au" target="_blank" rel="noopener">Australian National University</a>, Australia</span>
+        <span class="inst">Associate Director of Education, School of Computing (since Apr 2022)</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="cv-date">Feb 2020&ndash;Dec 2021</td>
+      <td class="cv-body">
+        <strong>Visiting Scientist</strong>
+        <span class="inst"><a href="https://www.data61.csiro.au" target="_blank" rel="noopener">Data61, CSIRO (erstwhile NICTA)</a>, Australia</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="cv-date">Feb 2018&ndash;Feb 2021</td>
+      <td class="cv-body">
+        <strong>Honorary Senior Research Fellow</strong>
+        <span class="inst">Macquarie University, Australia</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="cv-date">Jan 2018&ndash;Dec 2020</td>
+      <td class="cv-body">
+        <strong>Conjoint Associate Professor</strong>
+        <span class="inst"><a href="https://www.cse.unsw.edu.au" target="_blank" rel="noopener">University of New South Wales</a>, Australia</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="cv-date">Oct 2010&ndash;Jan 2020</td>
+      <td class="cv-body">
+        <strong>(Senior/Principal) Research Scientist</strong>
+        <span class="inst"><a href="https://www.data61.csiro.au" target="_blank" rel="noopener">Data61, CSIRO (formerly NICTA)</a>, Australia</span>
+        <span class="inst">Software Systems Research Group &mdash; promotions in 2013 and 2018</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="cv-date">Feb 2011&ndash;Nov 2017</td>
+      <td class="cv-body">
+        <strong>Conjoint (Senior) Lecturer</strong>
+        <span class="inst"><a href="https://www.cse.unsw.edu.au" target="_blank" rel="noopener">University of New South Wales</a>, Australia</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="cv-date">Jul 2009&ndash;Oct 2010</td>
+      <td class="cv-body">
+        <strong>Postdoc in Computer Science</strong>
+        <span class="inst"><a href="https://www.informatik.uni-augsburg.de/en/" target="_blank" rel="noopener">University of Augsburg</a>, Germany</span>
+      </td>
+    </tr>
+  </table>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     4. AWARDS & HONOURS
+════════════════════════════════════════════════ -->
+<section class="cv-section">
+  <h2 class="cv-heading">Awards &amp; Honours</h2>
+  <div class="cv-award"><span class="cv-award-year">2023</span>DARPA Game Changer Award — honouring the significant and lasting impact of HACMS over the past decade</div>
+  <div class="cv-award"><span class="cv-award-year">2022–23</span>AWS Fellow, University of Limerick, Ireland</div>
+  <div class="cv-award"><span class="cv-award-year">2008</span>Award for Junior Scientists — Universität Bayern e.V. (runner-up, interdisciplinary)</div>
+  <div class="cv-award"><span class="cv-award-year">2007–09</span>Max Weber Fellow — Universität Bayern e.V. (Elite Network of Bavaria)</div>
+  <div class="cv-award"><span class="cv-award-year">2007, 2008</span>Woody Bledsoe Travel Award</div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     5. GRANTS & FUNDING
+════════════════════════════════════════════════ -->
+<section class="cv-section">
+  <h2 class="cv-heading">Grants &amp; Funding</h2>
+
+  <div class="grant-item">
+    <div class="grant-title">Verifying Concurrent Data Structures for Trustworthy Systems</div>
+    <div class="grant-meta">Defence Science and Technology (DST), Australia &nbsp;·&nbsp; AUD$1m &nbsp;·&nbsp; Chief Investigator &nbsp;·&nbsp; 2021–2025</div>
+  </div>
+  <div class="grant-item">
+    <div class="grant-title">Redesigning Introductory Programming Content and Assessment</div>
+    <div class="grant-meta">ANU Strategic Learning and Teaching Grant &nbsp;·&nbsp; AUD$15k &nbsp;·&nbsp; 2024–2025</div>
+  </div>
+  <div class="grant-item">
+    <div class="grant-title">Sponsorship — Logic Summer School@ANU (2024, 2025)</div>
+    <div class="grant-meta">Google, Jane Street, ASD &nbsp;·&nbsp; AUD$~100k</div>
+  </div>
+  <div class="grant-item">
+    <div class="grant-title">Design and Verification of Correct, Efficient and Secure Concurrent Systems</div>
+    <div class="grant-meta">ARC Discovery Grant &nbsp;·&nbsp; AUD$420k &nbsp;·&nbsp; PI &nbsp;·&nbsp; 2019–2023</div>
+  </div>
+  <div class="grant-item">
+    <div class="grant-title">Automated Verification of Control Protocols with Timed Automata</div>
+    <div class="grant-meta">Defence Science and Technology (DST), Australia &nbsp;·&nbsp; AUD$55k &nbsp;·&nbsp; 2020–2021</div>
+  </div>
+  <div class="grant-item">
+    <div class="grant-title">Tools for Network Routing and Control Protocols Verification</div>
+    <div class="grant-meta">Defence Science and Technology (DST), Australia &nbsp;·&nbsp; AUD$35k &nbsp;·&nbsp; 2019–2020</div>
+  </div>
+  <div class="grant-item">
+    <div class="grant-title">Network Protocol Specification and Verification (DARPA HACMS)</div>
+    <div class="grant-meta">DARPA's High-Assurance Cyber Military Systems program &nbsp;·&nbsp; AUD$~4.5m (share) &nbsp;·&nbsp; 2014–2017 &nbsp;·&nbsp; <em>Won Game Changer Award 2023</em></div>
+  </div>
+  <div class="grant-item">
+    <div class="grant-title">Algebraic Approaches to Routing Problems</div>
+    <div class="grant-meta">Go8 Australia/DAAD PPP Joint Research Co-operation &nbsp;·&nbsp; AUD$~36k &nbsp;·&nbsp; 2015–2018</div>
+  </div>
+  <div class="grant-item">
+    <div class="grant-title">DAAD RISE Worldwide (student research internships)</div>
+    <div class="grant-meta">AUD$~100k total &nbsp;·&nbsp; 2011–2020</div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     6. RESEARCH INTERESTS
+════════════════════════════════════════════════ -->
+<section class="cv-section">
+  <h2 class="cv-heading">Research Interests</h2>
+  <div class="ri-section">
+    <div class="ri-top">Formal Models and Calculi for Software Systems</div>
+    <div class="ri-sub">
+      Specification and verification of protocols (routing and communication) &nbsp;·&nbsp;
+      Program verification (safety and liveness, concurrency) &nbsp;·&nbsp;
+      Trustworthy systems
+    </div>
+  </div>
+  <div class="ri-section">
+    <div class="ri-top">Mathematical Structures in Computing</div>
+    <div class="ri-sub">
+      Process algebras &nbsp;·&nbsp;
+      Program algebras &nbsp;·&nbsp;
+      Proof automation and mechanisation (off-the-shelf theorem provers)
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     7. PROFESSIONAL ACTIVITIES
+════════════════════════════════════════════════ -->
+<section class="cv-section">
+  <h2 class="cv-heading">Professional Activities</h2>
+
+  <div class="svc-item">
+    <span class="svc-role">Vice Chair</span>
+    <a href="https://www.ifip.org/index.php?option=com_content&task=view&id=63" target="_blank" rel="noopener">IFIP Technical Committee 2 — Software: Theory and Practice</a>
+  </div>
+  <div class="svc-item">
+    <span class="svc-role">Chair (elected 2020) / Elected Member</span>
+    <a href="https://ifipwg21wiki.cs.kuleuven.be/IFIP21/WebHome" target="_blank" rel="noopener">IFIP Working Group 2.1 — Algorithmic Languages and Calculi</a>
+    <span style="color:var(--mid-col); font-size:0.875rem;"> (member since 2014)</span>
+  </div>
+  <div class="svc-item">
+    <span class="svc-role">Elected Member</span>
+    <a href="https://ifip-tc2-wg23.paluno.uni-due.de" target="_blank" rel="noopener">IFIP Working Group 2.3 — Programming Methodology</a>
+    <span style="color:var(--mid-col); font-size:0.875rem;"> (since 2019)</span>
+  </div>
+  <div class="svc-item">
+    <span class="svc-role">Editor</span>
+    <a href="http://www.journals.elsevier.com/journal-of-logical-and-algebraic-methods-in-programming" target="_blank" rel="noopener">Journal of Logical and Algebraic Methods in Programming (JLAMP)</a>
+    <span style="color:var(--mid-col); font-size:0.875rem;"> (since 2016)</span>
+  </div>
+  <div class="svc-item">
+    <span class="svc-role">Steering Committee</span>
+    <a href="http://mars-workshop.org/" target="_blank" rel="noopener">Models for Formal Analysis of Real Systems (MARS)</a>
+    <span style="color:var(--mid-col); font-size:0.875rem;"> — founder (2015)</span>
+  </div>
+  <div class="svc-item">
+    <span class="svc-role">Steering Committee</span>
+    <a href="http://ramics-conference.org/" target="_blank" rel="noopener">Relational and Algebraic Methods in Computer Science (RAMiCS)</a>
+    <span style="color:var(--mid-col); font-size:0.875rem;"> (since 2020)</span>
+  </div>
+  <div class="svc-item">
+    <span class="svc-role">Member</span>
+    Formal Methods Europe (FME) — Industrial Committee
+  </div>
+
+  <div class="svc-item" style="margin-top:0.75rem;">
+    <span class="svc-role">Programme Committees</span>
+    <button class="pc-toggle" onclick="togglePC(this)">Show all ({{ site.data.pcs.size | default: 35 }}+ conferences)</button>
+    <div class="pc-block" id="pc-list">
+      RAMiCS 2026, FMICS 2025, VSTTE 2025, SETTA 2024, FMICS 2024, FM 2024, MARS 2024, RAMiCS 2024,
+      LPAR 2023, RAMiCS 2023, FM 2023, FMICS 2022, VECoS 2022, MARS 2022, MPC 2022, FORTE 2022,
+      VECoS 2021, RAMiCS 2021, FM 2021, TACAS 2021, VECoS 2020, MARS 2020, ETAPS 2020 (workshop chair),
+      RAMiCS 2020, FMICS 2019, iFM 2018, RAMiCS 2018, MARS 2017 (co-chair), RAMiCS 2017 (co-chair),
+      MARS 2015 (chair), RAMiCS 2015, ANT 2014, RAMiCS 2014 (co-chair), WRiPE 2013, RAMiCS 2013,
+      ATx 2012 (chair), ATE 2011 (chair), RAMiCS 12, RelMiCS 11/AKA 6, TPTPWoWo, ESARM 2008.
+    </div>
+  </div>
+
+  <div class="svc-item" style="margin-top:0.5rem;">
+    <span class="svc-role">External Reviewer (funding bodies)</span>
+    Agence Nationale de la Recherche (ANR) — France;
+    Natural Sciences and Engineering Research Council of Canada (NSERC);
+    Australian Research Council (ARC);
+    ALECS Fellowship Programme (Ireland);
+    Nokia Foundation (Finland)
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     8. PUBLICATIONS & TEACHING
+════════════════════════════════════════════════ -->
+<section class="cv-section">
+  <h2 class="cv-heading">Publications &amp; Teaching</h2>
+  <p>
+    A full list of publications (100+ peer-reviewed articles) is available on the
+    <a href="/publications/">Publications page</a>.
+    An overview of courses taught since 2006 is available on the
+    <a href="/teaching/">Teaching page</a>.
+  </p>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     9. MISCELLANEOUS
+════════════════════════════════════════════════ -->
+<section class="cv-section">
+  <h2 class="cv-heading">Miscellaneous</h2>
+  <p>Presenter at <em>Future Science Talks Comedy Edition</em> (Canberra, 2025) —
+    this show features Canberra's science professionals who partner with comedians to bring humour to scientific talks.
+    <a href="https://www.youtube.com/watch?app=desktop&v=5fRXgmkQRv0" target="_blank" rel="noopener">Watch on YouTube</a>.
+  </p>
+</section>
+
+
+<script>
+function togglePC(btn) {
+  var block = document.getElementById('pc-list');
+  var open = block.classList.toggle('open');
+  btn.textContent = open ? 'Hide list' : 'Show all (35+ conferences)';
+}
+</script>
