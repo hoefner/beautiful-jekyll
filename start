@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Install dependencies
+bundle install
+
+# Serve the Jekyll site
+bundle exec jekyll serve
