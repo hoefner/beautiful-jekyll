@@ -4,12 +4,13 @@ layout: page
 
 {{ content }}
 
-{% assign current     = site.data.people.current %}
-{% assign alumni_phd  = site.data.people.alumni_phd %}
-{% assign alumni_other= site.data.people.alumni_other %}
+{% assign all_people   = site.people %}
+{% assign current      = all_people | where: "current", true %}
+{% assign alumni_phd   = all_people | where: "current", false | where: "group", "phd"   | sort: "sort_year" | reverse %}
+{% assign alumni_other = all_people | where: "current", false | where: "group", "other" | sort: "sort_year" | reverse %}
 
-{% assign n_phd_curr  = current | where: "badge", "PhD"   | size %}
-{% assign n_phd_total = alumni_phd  | size | plus: n_phd_curr %}
+{% assign n_phd_curr  = current | where: "badge", "PhD" | size %}
+{% assign n_phd_total = alumni_phd | size | plus: n_phd_curr %}
 {% assign n_curr      = current | size %}
 
 <style>
@@ -42,7 +43,7 @@ layout: page
   }
   .people-item:last-child { border-bottom: none; }
   .people-name { font-weight: 700; color: var(--text-col); }
-  .people-title { font-style: italic; color: var(--mid-col); }
+  .people-thesis { font-style: italic; color: var(--mid-col); }
   .people-meta { font-size: 0.875rem; color: var(--mid-col); }
   .people-badge {
     display: inline-block;
@@ -75,23 +76,23 @@ layout: page
     <li class="people-item">
       <span class="people-name">{{ person.name }}</span>
       <span class="people-badge">{{ person.badge }}</span>
-      <div class="people-title">{{ person.title }}</div>
-      <div class="people-meta">{{ person.school }} &nbsp;·&nbsp; since {{ person.since }}</div>
+      <div class="people-thesis">{{ person.title }}</div>
+      <div class="people-meta">{{ person.school }} &nbsp;·&nbsp; since {{ person.year }}</div>
     </li>
     {% endfor %}
   </ul>
 </section>
 
 
-{% comment %} ══ ALUMNI — PhD/MPhil ══ {% endcomment %}
-{% if alumni_phd and alumni_phd.size > 0 %}
+{% comment %} ══ PhD ALUMNI ══ {% endcomment %}
+{% if alumni_phd.size > 0 %}
 <section class="people-section">
   <h2 class="people-heading">PhD &amp; MPhil Alumni</h2>
   <ul class="people-list">
     {% for person in alumni_phd %}
     <li class="people-item">
       <span class="people-name">{{ person.name }}</span>
-      <div class="people-title">{{ person.title }}</div>
+      <div class="people-thesis">{{ person.title }}</div>
       <div class="people-meta">
         {{ person.school }} &nbsp;·&nbsp; {{ person.year }}
         {% if person.note %} &nbsp;·&nbsp; {{ person.note }}{% endif %}
@@ -104,8 +105,8 @@ layout: page
 {% endif %}
 
 
-{% comment %} ══ ALUMNI — Other ══ {% endcomment %}
-{% if alumni_other and alumni_other.size > 0 %}
+{% comment %} ══ OTHER ALUMNI ══ {% endcomment %}
+{% if alumni_other.size > 0 %}
 <section class="people-section">
   <h2 class="people-heading">Other Alumni</h2>
   <ul class="people-list">
@@ -113,7 +114,7 @@ layout: page
     <li class="people-item">
       <span class="people-name">{{ person.name }}</span>
       <span class="people-badge">{{ person.badge }}</span>
-      <div class="people-title">{{ person.title }}</div>
+      <div class="people-thesis">{{ person.title }}</div>
       <div class="people-meta">
         {{ person.school }} &nbsp;·&nbsp; {{ person.year }}
         {% if person.note %} &nbsp;·&nbsp; {{ person.note }}{% endif %}

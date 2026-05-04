@@ -283,7 +283,7 @@ timezone: "Australia/Canberra"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 5
+# paginate: 5
 
 kramdown:
   input: GFM
@@ -310,7 +310,9 @@ collections:
         permalink: /publications/:name
     teaching:
         output: false        # individual pages not needed; overview page handles display
-
+    people:
+        output: false   # individual pages not needed; overview handles display
+    
 # Exclude these files from production site
 exclude:
   - CHANGELOG.md
