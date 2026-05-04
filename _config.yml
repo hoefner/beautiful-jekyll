@@ -15,7 +15,6 @@ author: Peter Höfner
 
 navbar-links:
   About Me: "aboutme"
-  Curriculum Vitae: "cv"
   Publications: "publications"
 #    - All Publications: "publications"
 #    - Journal Articles: "publications#pub-journal"
@@ -25,12 +24,13 @@ navbar-links:
 #    - Technical Reports: "publications#pub-technical_report"
 #    - Miscellaneous: "publications#pub-misc"
   Teaching: "teaching"   # single link to /teaching/ overview page
+  Curriculum Vitae: "cv"
+  People: "people"
   # Or if you want sub-links:
   # Teaching:
   #   - All Teaching: "teaching"
   #   - Current: "teaching#teach-course"
   #   - Seminars: "teaching#teach-seminar"
-
   Hobbies/Fun:
     - Acting: "acting"
 #  Resources:

@@ -1,0 +1,126 @@
+---
+layout: page
+---
+
+{{ content }}
+
+{% assign current     = site.data.people.current %}
+{% assign alumni_phd  = site.data.people.alumni_phd %}
+{% assign alumni_other= site.data.people.alumni_other %}
+
+{% assign n_phd_curr  = current | where: "badge", "PhD"   | size %}
+{% assign n_phd_total = alumni_phd  | size | plus: n_phd_curr %}
+{% assign n_curr      = current | size %}
+
+<style>
+  .people-summary {
+    background: var(--navbar-col);
+    border: 1px solid var(--navbar-border-col);
+    border-radius: 0.35rem;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: var(--mid-col);
+  }
+  .people-summary strong { color: var(--link-col); }
+  .people-section { margin-top: 2.25rem; }
+  .people-heading {
+    font-family: var(--header-font);
+    font-size: 1.4rem;
+    font-weight: 800;
+    border-bottom: 2px solid var(--navbar-border-col);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-col);
+  }
+  .people-list { list-style: none; padding: 0; margin: 0; }
+  .people-item {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--navbar-border-col);
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+  .people-item:last-child { border-bottom: none; }
+  .people-name { font-weight: 700; color: var(--text-col); }
+  .people-title { font-style: italic; color: var(--mid-col); }
+  .people-meta { font-size: 0.875rem; color: var(--mid-col); }
+  .people-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 0.75rem;
+    margin-left: 0.4rem;
+    background: var(--navbar-col);
+    border: 1px solid var(--navbar-border-col);
+    color: var(--mid-col);
+    vertical-align: middle;
+    font-family: var(--header-font);
+    font-weight: normal;
+  }
+</style>
+
+<div class="people-summary">
+  Over the years, Peter has supervised
+  <strong>{{ n_phd_total }} PhD student{% if n_phd_total != 1 %}s{% endif %}</strong>
+  as well as numerous Masters, Honours, and intern students.
+  Currently supervising <strong>{{ n_curr }} researcher{% if n_curr != 1 %}s{% endif %}</strong>.
+</div>
+
+
+{% comment %} ══ CURRENT ══ {% endcomment %}
+<section class="people-section">
+  <h2 class="people-heading">Current</h2>
+  <ul class="people-list">
+    {% for person in current %}
+    <li class="people-item">
+      <span class="people-name">{{ person.name }}</span>
+      <span class="people-badge">{{ person.badge }}</span>
+      <div class="people-title">{{ person.title }}</div>
+      <div class="people-meta">{{ person.school }} &nbsp;·&nbsp; since {{ person.since }}</div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+
+{% comment %} ══ ALUMNI — PhD/MPhil ══ {% endcomment %}
+{% if alumni_phd and alumni_phd.size > 0 %}
+<section class="people-section">
+  <h2 class="people-heading">PhD &amp; MPhil Alumni</h2>
+  <ul class="people-list">
+    {% for person in alumni_phd %}
+    <li class="people-item">
+      <span class="people-name">{{ person.name }}</span>
+      <div class="people-title">{{ person.title }}</div>
+      <div class="people-meta">
+        {{ person.school }} &nbsp;·&nbsp; {{ person.year }}
+        {% if person.note %} &nbsp;·&nbsp; {{ person.note }}{% endif %}
+        {% if person.pdf %} &nbsp;<a href="/assets/pdf/{{ person.pdf }}" target="_blank">[PDF]</a>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+
+{% comment %} ══ ALUMNI — Other ══ {% endcomment %}
+{% if alumni_other and alumni_other.size > 0 %}
+<section class="people-section">
+  <h2 class="people-heading">Other Alumni</h2>
+  <ul class="people-list">
+    {% for person in alumni_other %}
+    <li class="people-item">
+      <span class="people-name">{{ person.name }}</span>
+      <span class="people-badge">{{ person.badge }}</span>
+      <div class="people-title">{{ person.title }}</div>
+      <div class="people-meta">
+        {{ person.school }} &nbsp;·&nbsp; {{ person.year }}
+        {% if person.note %} &nbsp;·&nbsp; {{ person.note }}{% endif %}
+        {% if person.pdf %} &nbsp;<a href="/assets/pdf/{{ person.pdf }}" target="_blank">[PDF]</a>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
