@@ -1,0 +1,12 @@
+---
+layout: page
+id: "2017_moehring"
+name: "Katja Möhring"
+title: "Automated Translation from the Process Algebra AWN to the Model Checker Uppaal"
+school: "University of Hamburg"
+badge: "Bachelor"
+group: "other"
+year: "October 2017"
+sort_year: 2017
+current: false
+---

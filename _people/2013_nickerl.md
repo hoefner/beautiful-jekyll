@@ -1,0 +1,12 @@
+---
+layout: page
+id: "2013_nickerl"
+name: "Julian Nickerl"
+title: "Automatic Transformation from AWN to Uppaal"
+school: "University of Ulm, Germany"
+badge: "Intern"
+group: "other"
+year: "2013"
+sort_year: 2013
+current: false
+---

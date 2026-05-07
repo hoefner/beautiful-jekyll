@@ -1,0 +1,13 @@
+---
+layout: page
+id: "2009_lindner"
+name: "Stephan Lindner"
+title: "A Structured Compendium for Infinite Semirings."
+school: "University of Augsburg, Germany"
+badge: "Masters"
+group: "other"
+year: "2009"
+sort_year: 2009
+current: false
+note: "in German"
+---

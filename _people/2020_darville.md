@@ -1,0 +1,12 @@
+---
+layout: page
+id: "2020_darville"
+name: "Courtney Darville"
+title: "Attack Models for the OSPF Routing Protocol"
+school: "Data61,CSIRO and UNSW, Australia"
+badge: "Intern"
+group: "other"
+year: "2020"
+sort_year: 2020
+current: false
+---

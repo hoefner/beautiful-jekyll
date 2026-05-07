@@ -5,6 +5,34 @@ layout: page
 {{ content }}
 
 <style>
+  /* ── Jump nav ── */
+  .cv-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+    list-style: none;
+  }
+  .cv-nav a {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border: 1px solid var(--navbar-border-col);
+    border-radius: 2rem;
+    font-family: var(--header-font);
+    font-size: 0.875rem;
+    color: var(--text-col);
+    text-decoration: none;
+    background: var(--navbar-col);
+    transition: background 0.15s, color 0.15s;
+  }
+  .cv-nav a:hover {
+    background: var(--hover-col);
+    color: var(--page-col);
+    border-color: var(--hover-col);
+    text-decoration: none;
+  }
+
   /* ── Section headings ── */
   .cv-section { margin-top: 2.5rem; }
   .cv-heading {
@@ -16,8 +44,15 @@ layout: page
     margin-bottom: 1.2rem;
     color: var(--link-col);
   }
+  .cv-subheading {
+    font-family: var(--header-font);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-col);
+    margin: 1.25rem 0 0.5rem;
+  }
 
-  /* ── Table layout used for timeline entries ── */
+  /* ── Table layout for timeline entries ── */
   .cv-table { width: 100%; border-collapse: collapse; margin-bottom: 0.5rem; }
   .cv-table tr { border-bottom: 1px solid var(--navbar-border-col); }
   .cv-table tr:last-child { border-bottom: none; }
@@ -65,22 +100,63 @@ layout: page
   .ri-section { margin-bottom: 0.75rem; }
   .ri-top { font-weight: 700; color: var(--text-col); margin-bottom: 0.25rem; }
   .ri-sub { padding-left: 1.25rem; color: var(--mid-col); font-size: 0.9rem; line-height: 1.7; }
+
+  /* ── Expertise list ── */
+  .expertise-list { list-style: none; padding: 0; margin: 0; }
+  .expertise-list li { padding: 0.35rem 0; border-bottom: 1px solid var(--navbar-border-col); font-size: 0.95rem; }
+  .expertise-list li:last-child { border-bottom: none; }
+  .expertise-list strong { color: var(--text-col); }
 </style>
+
+
+<!-- ── Jump navigation ── -->
+<ul class="cv-nav">
+  <li><a href="#cv-summary">Summary</a></li>
+  <li><a href="#cv-qualifications">Qualifications</a></li>
+  <li><a href="#cv-appointments">Appointments</a></li>
+  <li><a href="#cv-awards">Awards</a></li>
+  <li><a href="#cv-grants">Grants</a></li>
+  <li><a href="#cv-interests">Research Interests</a></li>
+  <li><a href="#cv-service">Professional Activities</a></li>
+  <li><a href="#cv-pubs">Publications &amp; Teaching</a></li>
+  <li><a href="#cv-misc">Miscellaneous</a></li>
+</ul>
 
 
 <!-- ══════════════════════════════════════════════
      1. SUMMARY
 ════════════════════════════════════════════════ -->
-<section class="cv-section">
+<section class="cv-section" id="cv-summary">
   <h2 class="cv-heading">Summary</h2>
-  <p>Dr. Peter Höfner is an Associate Professor at the Australian National University (ANU) and Associate Director of Education in the School of Computing. His research transforms how software systems are developed — ensuring their trustworthiness and security to the highest degree possible: the certainty of mathematical proof. He is a world leader in the formal analysis of protocols used by emergency services worldwide, and has led collaborative research with Australia's Defence Science and Technology Group and DARPA. He is the recipient of DARPA's prestigious <em>Game Changer Award</em> (2023).</p>
+  <p>Dr. Peter Höfner is a Professor in the School of Computing at the Australian National University. His research transforms how software systems are developed — ensuring their trustworthiness and security to the highest degree possible: the certainty of mathematical proof. He is a recognised leader in the formal analysis of routing and communication protocols, and has led collaborative research with Australia's Defence Science and Technology Group and DARPA.</p>
+
+  <h3 class="cv-subheading">Research</h3>
+  <p>Peter's research vision is to fundamentally transform the way real-world software systems are built and engineered — ensuring their trustworthiness to the highest possible degree, backed by mathematical proof. He is a recognised leader in the formal analysis of network protocols used by emergency services and defence organisations. His research contributions led to the first formalisation of the AODV routing protocol (standardised by the IETF and integrated into IEEE 802.11s), uncovering routing loops that contradicted popular belief and the official standard — findings that directly influenced the development of its successor, AODVv2.</p>
+  <p>As part of DARPA's High-Assurance Cyber Military Systems (HACMS) programme, Peter contributed to the design and verification of communication protocols. In 2023, DARPA honoured HACMS with its <a href="https://www.darpa.mil/news-events/2023-01-24" target="_blank" rel="noopener">Game Changer Award</a>, recognising its profound and lasting impact on national security. From 2021 to 2025, he led a AUD$1 million project funded by Australia's Defence Science and Technology Group, developing generic frameworks for verifying concurrent data structures used to protect sensitive infrastructure from cyber attacks.</p>
+  <p>To realise his research vision, Peter collaborates with leading researchers worldwide and with industry and government partners including Amazon Web Services, the Defence Science and Technology Group, DARPA, ProofCraft, and OpenBSD.</p>
+
+  <h3 class="cv-subheading">Education</h3>
+  <p>As Associate Director of Education within the ANU School of Computing, Peter combined his scientific vision with a commitment to rigorous curriculum development and educational innovation. He has led the design and transformation of curricula across eight computing programs and five diplomas, supporting over 6,000 student enrolments per semester — over 10% of ANU's total student body. He has been the academic lead for the Australian Computer Society (ACS) accreditation of ANU's computing programs, critical for students' visa eligibility and professional practice pathways.</p>
+  <p>Peter redesigned <a href="https://programsandcourses.anu.edu.au/course/comp3610" target="_blank" rel="noopener">COMP3610/6361 Principles of Programming Languages</a> and created the new course <a href="https://programsandcourses.anu.edu.au/course/comp4011" target="_blank" rel="noopener">COMP4011/8011 Advanced Topics in Formal Methods and Programming Languages</a> (2024), offering students cutting-edge knowledge at the intersection of software verification theory and practice. He also designed and launched a New Convenor Workshop for early-career academics, a model subsequently adopted across the College of Systems and Society.</p>
+
+  <h3 class="cv-subheading">Professional Leadership</h3>
+  <p>Peter is the elected Vice Chair of the <a href="https://www.ifip.org" target="_blank" rel="noopener">International Federation for Information Processing (IFIP) Technical Committee 2</a> — Software: Theory and Practice, an international body comprising 17 Working Groups and over 450 researchers and ICT professionals. He served as elected Chair of <a href="https://ifipwg21wiki.cs.kuleuven.be/IFIP21/WebHome" target="_blank" rel="noopener">IFIP Working Group 2.1</a> on Algorithmic Languages and Calculi from 2020 to 2025, and is an elected member of <a href="https://ifip-tc2-wg23.paluno.uni-due.de" target="_blank" rel="noopener">IFIP Working Group 2.3</a> on Programming Methodology.</p>
+  <p>He serves on the editorial board of the <a href="http://www.journals.elsevier.com/journal-of-logical-and-algebraic-methods-in-programming" target="_blank" rel="noopener">Journal of Logical and Algebraic Methods in Programming (JLAMP)</a> and on the steering committees of <a href="http://ramics-conference.org/" target="_blank" rel="noopener">RAMiCS</a> and <a href="http://mars-workshop.org/" target="_blank" rel="noopener">MARS</a> — the latter of which he founded in 2015. He is also a member of the Formal Methods Europe (FME) Industry Committee.</p>
+
+  <h3 class="cv-subheading">Key Areas of Expertise</h3>
+  <ul class="expertise-list">
+    <li><strong>Formal Methods &amp; Software Verification</strong> — developing mathematical proofs to guarantee software correctness</li>
+    <li><strong>Concurrency &amp; Distributed Systems</strong> — verifying real-world concurrent and distributed software</li>
+    <li><strong>Protocol Security &amp; High-Assurance Systems</strong> — analysing and improving protocols used in critical infrastructure</li>
+    <li><strong>Process &amp; Program Algebras</strong> — algebraic foundations for reasoning about software behaviour</li>
+  </ul>
 </section>
 
 
 <!-- ══════════════════════════════════════════════
      2. FORMAL QUALIFICATIONS
 ════════════════════════════════════════════════ -->
-<section class="cv-section">
+<section class="cv-section" id="cv-qualifications">
   <h2 class="cv-heading">Formal Qualifications</h2>
   <table class="cv-table">
     <tr>
@@ -104,15 +180,15 @@ layout: page
 <!-- ══════════════════════════════════════════════
      3. APPOINTMENTS
 ════════════════════════════════════════════════ -->
-<section class="cv-section">
+<section class="cv-section" id="cv-appointments">
   <h2 class="cv-heading">Appointments</h2>
   <table class="cv-table">
     <tr>
       <td class="cv-date">since Feb 2020</td>
       <td class="cv-body">
-        <strong>Associate Professor (tenured 2023)</strong>
+        <strong>Professor (promoted 2026, tenured 2023)</strong>
         <span class="inst"><a href="https://cecs.anu.edu.au" target="_blank" rel="noopener">Australian National University</a>, Australia</span>
-        <span class="inst">Associate Director of Education, School of Computing (since Apr 2022)</span>
+        <span class="inst">Associate Director of Education, School of Computing (Apr 2022&ndash;Apr 2026)</span>
       </td>
     </tr>
     <tr>
@@ -165,7 +241,7 @@ layout: page
 <!-- ══════════════════════════════════════════════
      4. AWARDS & HONOURS
 ════════════════════════════════════════════════ -->
-<section class="cv-section">
+<section class="cv-section" id="cv-awards">
   <h2 class="cv-heading">Awards &amp; Honours</h2>
   <div class="cv-award"><span class="cv-award-year">2023</span>DARPA Game Changer Award — honouring the significant and lasting impact of HACMS over the past decade</div>
   <div class="cv-award"><span class="cv-award-year">2022–23</span>AWS Fellow, University of Limerick, Ireland</div>
@@ -178,9 +254,8 @@ layout: page
 <!-- ══════════════════════════════════════════════
      5. GRANTS & FUNDING
 ════════════════════════════════════════════════ -->
-<section class="cv-section">
+<section class="cv-section" id="cv-grants">
   <h2 class="cv-heading">Grants &amp; Funding</h2>
-
   <div class="grant-item">
     <div class="grant-title">Verifying Concurrent Data Structures for Trustworthy Systems</div>
     <div class="grant-meta">Defence Science and Technology (DST), Australia &nbsp;·&nbsp; AUD$1m &nbsp;·&nbsp; Chief Investigator &nbsp;·&nbsp; 2021–2025</div>
@@ -223,7 +298,7 @@ layout: page
 <!-- ══════════════════════════════════════════════
      6. RESEARCH INTERESTS
 ════════════════════════════════════════════════ -->
-<section class="cv-section">
+<section class="cv-section" id="cv-interests">
   <h2 class="cv-heading">Research Interests</h2>
   <div class="ri-section">
     <div class="ri-top">Formal Models and Calculi for Software Systems</div>
@@ -247,15 +322,14 @@ layout: page
 <!-- ══════════════════════════════════════════════
      7. PROFESSIONAL ACTIVITIES
 ════════════════════════════════════════════════ -->
-<section class="cv-section">
+<section class="cv-section" id="cv-service">
   <h2 class="cv-heading">Professional Activities</h2>
-
   <div class="svc-item">
     <span class="svc-role">Vice Chair</span>
     <a href="https://www.ifip.org/index.php?option=com_content&task=view&id=63" target="_blank" rel="noopener">IFIP Technical Committee 2 — Software: Theory and Practice</a>
   </div>
   <div class="svc-item">
-    <span class="svc-role">Chair (elected 2020) / Elected Member</span>
+    <span class="svc-role">Chair 2020–2025 / Elected Member</span>
     <a href="https://ifipwg21wiki.cs.kuleuven.be/IFIP21/WebHome" target="_blank" rel="noopener">IFIP Working Group 2.1 — Algorithmic Languages and Calculi</a>
     <span style="color:var(--mid-col); font-size:0.875rem;"> (member since 2014)</span>
   </div>
@@ -283,10 +357,9 @@ layout: page
     <span class="svc-role">Member</span>
     Formal Methods Europe (FME) — Industrial Committee
   </div>
-
   <div class="svc-item" style="margin-top:0.75rem;">
     <span class="svc-role">Programme Committees</span>
-    <button class="pc-toggle" onclick="togglePC(this)">Show all ({{ site.data.pcs.size | default: 35 }}+ conferences)</button>
+    <button class="pc-toggle" onclick="togglePC(this)">Show all (35+ conferences)</button>
     <div class="pc-block" id="pc-list">
       RAMiCS 2026, FMICS 2025, VSTTE 2025, SETTA 2024, FMICS 2024, FM 2024, MARS 2024, RAMiCS 2024,
       LPAR 2023, RAMiCS 2023, FM 2023, FMICS 2022, VECoS 2022, MARS 2022, MPC 2022, FORTE 2022,
@@ -296,7 +369,6 @@ layout: page
       ATx 2012 (chair), ATE 2011 (chair), RAMiCS 12, RelMiCS 11/AKA 6, TPTPWoWo, ESARM 2008.
     </div>
   </div>
-
   <div class="svc-item" style="margin-top:0.5rem;">
     <span class="svc-role">External Reviewer (funding bodies)</span>
     Agence Nationale de la Recherche (ANR) — France;
@@ -311,7 +383,7 @@ layout: page
 <!-- ══════════════════════════════════════════════
      8. PUBLICATIONS & TEACHING
 ════════════════════════════════════════════════ -->
-<section class="cv-section">
+<section class="cv-section" id="cv-pubs">
   <h2 class="cv-heading">Publications &amp; Teaching</h2>
   <p>
     A full list of publications (100+ peer-reviewed articles) is available on the
@@ -325,7 +397,7 @@ layout: page
 <!-- ══════════════════════════════════════════════
      9. MISCELLANEOUS
 ════════════════════════════════════════════════ -->
-<section class="cv-section">
+<section class="cv-section" id="cv-misc">
   <h2 class="cv-heading">Miscellaneous</h2>
   <p>Presenter at <em>Future Science Talks Comedy Edition</em> (Canberra, 2025) —
     this show features Canberra's science professionals who partner with comedians to bring humour to scientific talks.
