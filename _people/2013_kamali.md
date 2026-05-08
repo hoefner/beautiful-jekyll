@@ -3,7 +3,7 @@ layout: page
 id: "2013_kamali"
 name: "Maryam Kamali"
 title: "Formal Modelling of Network Topologies"
-school: "Abo Akademi University, Finland"
+school: "Åbo Akademi University, Finland"
 badge: "Intern"
 group: "other"
 year: "2013"

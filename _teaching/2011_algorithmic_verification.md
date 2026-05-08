@@ -1,9 +1,9 @@
 ---
 layout: page
-id: "2013_1_2011"
+id: "2011_algorithmic_verification"
 title: "Algorithmic Verification"
 type: "Course"
-school: "The University of New South Wales"
+school: "University of New South Wales, Australia"
 term: "S1 2011"
 year: 2011
 joint_with:

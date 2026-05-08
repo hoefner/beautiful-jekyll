@@ -1,9 +1,9 @@
 ---
 layout: page
-id: "2007_1_2006"
+id: "2006_aerospace_computing"
 title: "Aerospace Computing"
 type: "Course"
-school: "The University of Sheffield"
+school: "University of Sheffield, United Kingdom"
 term: "S2 2006"
 year: 2006
 joint_with:

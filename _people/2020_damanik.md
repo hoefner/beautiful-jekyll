@@ -7,7 +7,7 @@ school: "Australian National University, Australia"
 role: "Associate Supervisor"
 badge: "PhD"
 group: "phd"
-year: "2020 - "
+year: "2020"
 sort_year: 2020
 current: true
 ---

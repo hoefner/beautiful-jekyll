@@ -3,7 +3,7 @@ layout: page
 id: "2026_ostapenko"
 name: "Michael Ostapenko"
 title: "Finding Attacks by Means of Predicate Transformers"
-school: "ANU, Australia"
+school: "Australian National University, Australia"
 badge: "Honours"
 group: "other"
 year: "2026"

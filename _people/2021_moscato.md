@@ -3,7 +3,7 @@ layout: page
 id: "2021_moscato"
 name: "Anna Moscato"
 title: "Applying Predicate Transformersfor Concurrency"
-school: "ANU, Australia"
+school: "Australian National University, Australia"
 badge: "Honours"
 group: "other"
 year: "2021"

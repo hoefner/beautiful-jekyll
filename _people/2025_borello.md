@@ -3,7 +3,7 @@ layout: page
 id: "2025_borello"
 name: "Clint Del Borello"
 title: "Algebraic Verification of Graph Algorithms using Isabelle/HOL"
-school: "ANU, Australia"
+school: "Australian National University, Australia"
 badge: "Masters"
 group: "other"
 year: "2025"

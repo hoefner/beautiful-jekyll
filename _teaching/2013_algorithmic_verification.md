@@ -1,12 +1,11 @@
 ---
 layout: page
-id: "2013_1_2013"
+id: "2013_algorithmic_verification"
 title: "Algorithmic Verification"
 type: "Course"
-school: "The University of New South Wales"
+school: "University of New South Wales, Australia"
 term: "S1 2013"
 year: 2013
-url: "https://www.cse.unsw.edu.au/~cs3153/"
 joint_with:
   - "Franck Cassez"
   - "Ralf Huuck"

@@ -3,7 +3,7 @@ layout: page
 id: "2019_liorit"
 name: "Pierre Liorit"
 title: "Analysing Link Layer Protocols"
-school: "Ecole Polytechnique, France"
+school: "École Polytechnique, France"
 badge: "Intern"
 group: "other"
 year: "2019"

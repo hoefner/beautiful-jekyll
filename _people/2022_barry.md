@@ -8,7 +8,7 @@ school: "Australian National University, Australia"
 role: "Primary Supervisor and Chair"
 badge: "MPhil"
 group: "phd"
-year: "2022 - 2026"
+year: "2022"
 sort_year: 2022
 current: true
 ---

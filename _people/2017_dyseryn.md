@@ -3,7 +3,7 @@ layout: page
 id: "2017_dyseryn"
 name: "Victor Dyseryn"
 title: "Analysing Mutual Exclusion using Process Algebra with Signals"
-school: "Ecole Polytechnique, France"
+school: "École Polytechnique, France"
 badge: "Intern"
 group: "other"
 year: "2017"

@@ -7,7 +7,7 @@ school: "Australian National University, Australia"
 role: "Primary Supervisor and Chair"
 badge: "PhD"
 group: "phd"
-year: "2024 - "
+year: "2024"
 sort_year: 2024
 current: true
 ---

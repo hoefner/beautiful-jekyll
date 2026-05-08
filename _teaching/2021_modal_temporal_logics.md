@@ -1,12 +1,11 @@
 ---
 layout: page
-id: "2021_2_2021"
+id: "2021_modal_temporal_logics"
 title: "Seminar on Modal and Temporal Logics"
 type: "Seminar"
-school: "The Australian National University"
+school: "Australian National University, Australia"
 term: "S2 2021"
 year: 2021
-url: "https://programsandcourses.anu.edu.au/course/comp3710"
 joint_with:
   - "Yoshihiro Maruyama"
   - "Dirk Pattinson"

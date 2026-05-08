@@ -2,7 +2,7 @@
 layout: page
 id: "2012_edenhofer"
 name: "Sarah Edenhofer"
-title: "Formal Specification of the"
+title: "Formal Specification of the AODV Routing Protocol"
 school: "University of Augsburg, Germany"
 badge: "Bachelor"
 group: "other"

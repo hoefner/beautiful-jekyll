@@ -3,7 +3,7 @@ layout: page
 id: "2025_sarvay"
 name: "Myria Sarvay"
 title: "Open Bisimilarity for the π-Calculus with Mismatch in Isabelle"
-school: "ANU, Australia"
+school: "Australian National University, Australia"
 badge: "Project"
 group: "other"
 year: "2025"

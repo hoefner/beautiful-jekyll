@@ -3,7 +3,7 @@ layout: page
 id: "2025_cawley"
 name: "Matthew Cawley"
 title: "An IDE for the domain-specific language AWN"
-school: "ANU, Australia"
+school: "Australian National University, Australia"
 badge: "Honours"
 group: "other"
 year: "2025"
