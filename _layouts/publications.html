@@ -137,6 +137,14 @@ layout: page
   }
   .bibtex-block.open { display: block; }
 
+  /* ── Copyright notice ── */
+  .pub-copyright {
+    cursor: help;
+    color: var(--mid-col);
+    font-size: 0.85rem;
+    border-bottom: 1px dotted var(--mid-col);
+  }
+
   /* ── View containers ── */
   #view-by-type { display: none;  }
   #view-by-year { display: block; }
@@ -165,7 +173,7 @@ layout: page
         {% elsif type_key == "conference" %}{% assign label = "Conference Papers" %}
         {% elsif type_key == "book_chapter" %}{% assign label = "Book Chapters" %}
         {% elsif type_key == "book" %}{% assign label = "Books" %}
-        {% elsif type_key == "technical_report" %}{% assign label = "Technical Reports" %}
+        {% elsif type_key == "technical_report" %}{% assign label = "Technical Reports (incomplete)" %}
         {% elsif type_key == "misc" %}{% assign label = "Miscellaneous" %}
         {% endif %}
         <li><a href="#pub-{{ type_key }}">{{ label }} ({{ pubs_of_type.size }})</a></li>
@@ -180,7 +188,7 @@ layout: page
       {% elsif type_key == "conference" %}{% assign label = "Conference Papers" %}
       {% elsif type_key == "book_chapter" %}{% assign label = "Book Chapters" %}
       {% elsif type_key == "book" %}{% assign label = "Books" %}
-      {% elsif type_key == "technical_report" %}{% assign label = "Technical Reports" %}
+      {% elsif type_key == "technical_report" %}{% assign label = "Technical Reports (incomplete)" %}
       {% elsif type_key == "misc" %}{% assign label = "Miscellaneous" %}
       {% endif %}
 
@@ -195,10 +203,9 @@ layout: page
               <li class="pub-item" id="{{ pub.id }}">
                 <div class="pub-title">{{ pub.title }}</div>
                 <div class="pub-authors">
-                  {% assign coauthors = pub.authors | reject: "contains", "Höfner" | reject: "contains", "Hofner" %}
-                  {% if coauthors.size > 0 %}
-                    with {% for author in coauthors %}{{ author }}{% unless forloop.last %}, {% endunless %}{% endfor %}
-                  {% endif %}
+                  {% assign has_coauthor = false %}
+                  {% for author in pub.authors %}{% unless author contains "Höfner" or author contains "Hofner" %}{% assign has_coauthor = true %}{% endunless %}{% endfor %}
+                  {% if has_coauthor %}with {% for author in pub.authors %}{% unless author contains "Höfner" or author contains "Hofner" %}{{ author }}{% unless forloop.last %}, {% endunless %}{% endunless %}{% endfor %}{% endif %}
                 </div>
                 <div class="pub-venue">
                   {% if pub.venue_type == "journal" and pub.journal %}
@@ -214,8 +221,9 @@ layout: page
                 </div>
                 <div class="pub-links">
                   {% if pub.bibtex %}<button class="bibtex-toggle" onclick="toggleBibtex(this)">BibTeX</button>{% endif %}
-                  {% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener">Link / DOI</a>{% endif %}
-                  {% if pub.pdf %}<a href="{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+                  {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">DOI</a>{% elsif pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener">Link</a>{% endif %}
+                  {% if pub.arxiv %}<a href="https://arxiv.org/abs/{{ pub.arxiv }}" target="_blank" rel="noopener">arXiv</a>{% endif %}
+                  {% if pub.pdf %}<a href="/assets/pdf/{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a> <span class="pub-copyright" title="Important Copyright Notice: This material is presented to ensure timely dissemination of scholarly and technical work. Copyright and all rights therein are retained by authors or by other copyright holders such as publishers (Springer, Elsevier, ACM, IEEE). All persons copying this information are expected to adhere to the terms and constraints invoked by each copyright holder. In most cases, these works may not be reposted without explicit permission of the copyright holder.">&#169;</span>{% endif %}
                 </div>
                 {% if pub.bibtex %}<pre class="bibtex-block">{{ pub.bibtex }}</pre>{% endif %}
               </li>
@@ -260,10 +268,9 @@ layout: page
             <span class="pub-type-badge">{{ badge }}</span>
           </div>
           <div class="pub-authors">
-            {% assign coauthors = pub.authors | reject: "contains", "Höfner" | reject: "contains", "Hofner" %}
-            {% if coauthors.size > 0 %}
-              with {% for author in coauthors %}{{ author }}{% unless forloop.last %}, {% endunless %}{% endfor %}
-            {% endif %}
+            {% assign has_coauthor = false %}
+            {% for author in pub.authors %}{% unless author contains "Höfner" or author contains "Hofner" %}{% assign has_coauthor = true %}{% endunless %}{% endfor %}
+            {% if has_coauthor %}with {% for author in pub.authors %}{% unless author contains "Höfner" or author contains "Hofner" %}{{ author }}{% unless forloop.last %}, {% endunless %}{% endunless %}{% endfor %}{% endif %}
           </div>
           <div class="pub-venue">
             {% if pub.venue_type == "journal" and pub.journal %}
@@ -279,8 +286,9 @@ layout: page
           </div>
           <div class="pub-links">
             {% if pub.bibtex %}<button class="bibtex-toggle" onclick="toggleBibtex(this)">BibTeX</button>{% endif %}
-            {% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener">Link / DOI</a>{% endif %}
-            {% if pub.pdf %}<a href="{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+            {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">DOI</a>{% elsif pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener">Link</a>{% endif %}
+            {% if pub.arxiv %}<a href="https://arxiv.org/abs/{{ pub.arxiv }}" target="_blank" rel="noopener">arXiv</a>{% endif %}
+            {% if pub.pdf %}<a href="/assets/pdf/{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a> <span class="pub-copyright" title="Important Copyright Notice: This material is presented to ensure timely dissemination of scholarly and technical work. Copyright and all rights therein are retained by authors or by other copyright holders such as publishers (Springer, Elsevier, ACM, IEEE). All persons copying this information are expected to adhere to the terms and constraints invoked by each copyright holder. In most cases, these works may not be reposted without explicit permission of the copyright holder.">&#169;</span>{% endif %}
           </div>
           {% if pub.bibtex %}<pre class="bibtex-block">{{ pub.bibtex }}</pre>{% endif %}
         </li>

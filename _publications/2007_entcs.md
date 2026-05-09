@@ -1,0 +1,29 @@
+---
+layout: publication
+id: "2007_entcs"
+title: "Semiring Neighbours: An Algebraic Embedding and Extension of Neighbourhood Logic"
+venue_type: journal
+year: 2007
+authors:
+  - "Peter Höfner"
+journal: "Electronic Notes in Theoretical Computer Science"
+publisher: "Elsevier"
+volume: "191"
+pages: "49-72"
+doi: "10.1016/j.entcs.2006.09.040"
+url: "https://doi.org/10.1016/j.entcs.2006.09.040"
+pdf: "2007_hoefner_entcs.pdf"
+bibtex: |
+  @article{Hoefner2007-1,
+    Author = {H{\"o}fner, Peter},
+    Title = {Semiring Neighbours: An Algebraic Embedding and Extension of Neighbourhood Logic},
+    Journal = {Electronic Notes in Theoretical Computer Science},
+    Volume = {191},
+    Pages = {49-72},
+    Year = {2007},
+    Publisher = {Elsevier},
+    Doi = {10.1016/j.entcs.2006.09.040}
+  }
+---
+
+In 1996 Zhou and Hansen proposed a first-order interval logic called Neighbourhood Logic (NL) for specifying liveness and fairness of computing systems and defining notions of real analysis in terms of expanding modalities. After that, Roy and Zhou developed a sound and relatively complete Duration Calculus as an extension of NL. We present an embedding of NL into an idempotent semiring of intervals. This embedding allows us to extend NL from single intervals to sets of intervals as well as to extend the approach to arbitrary idempotent semirings. We show that most of the required properties follow directly from Galois connections, hence we get many properties for free. As one important result we obtain that some of the axioms which were postulated for NL can be dropped since they are theorems in our generalisation. Furthermore, we discuss other interval operations like Allen's 13 relations between intervals and their relationship to semiring neighbours. Then we present some possible interpretations for neighbours beyond interval settings. Here we discuss for example reachability in graphs and applications to hybrid systems. At the end of the paper we add finite and infinite iteration to NL and extend idempotent semirings to Kleene algebras and ω algebras. These extensions are useful for formulating properties of repetitive procedures like loops.
