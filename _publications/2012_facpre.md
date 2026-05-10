@@ -17,7 +17,7 @@ url: "https://link.springer.com/journal/165"
 bibtex: |
   @misc{Hoefner2012_facpre,
     Editor    = {H{\"o}fner, Peter and van Glabbeek, Rob and Hayes, Ian J.},
-    Title     = {Festschrift in honour of Carroll Morgan},
+    Title     = {Festschrift in Honour of Carroll Morgan},
     Journal   = {Formal Aspects of Computing},
     Volume    = {24},
     Number    = {4-6},
