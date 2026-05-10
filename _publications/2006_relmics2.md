@@ -17,17 +17,17 @@ doi: "10.1007/11828563_15"
 url: "https://doi.org/10.1007/11828563_15"
 pdf: "2006_hoefner_relmics2.pdf"
 bibtex: |
-  @InProceedings{Hoefner2006_relmics2,
-    Author = {H{\"o}fner, Peter and M{\"o}ller, Bernhard and Solin, Kim},
-    Title = {Omega Algebra, Demonic Refinement Algebra and Commands},
-    BookTitle = {Relations and Kleene Algebra in Computer Science (RelMiCS/AKA'06)},
-    Editor = {Schmidt, Renate A.},
-    Series = {Lecture Notes in Computer Science},
-    Volume = {4136},
-    Pages = {222-234},
-    Year = {2006},
-    Publisher = {Springer},
-    Doi = {10.1007/11828563_15}
+  @inproceedings{hoefner2006_relmics2,
+    author = {H{\"o}fner, Peter and M{\"o}ller, Bernhard and Solin, Kim},
+    title     = {{Omega Algebra, Demonic Refinement Algebra and Commands}},
+    booktitle = {Relations and Kleene Algebra in Computer Science (RelMiCS/AKA'06)},
+    editor = {Schmidt, Renate A.},
+    series = {Lecture Notes in Computer Science},
+    volume = {4136},
+    pages = {222-234},
+    year = {2006},
+    publisher = {Springer},
+    doi = {10.1007/11828563_15}
   }
 ---
 

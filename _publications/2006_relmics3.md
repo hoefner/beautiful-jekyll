@@ -16,17 +16,17 @@ doi: "10.1007/11828563_14"
 url: "https://doi.org/10.1007/11828563_14"
 pdf: "2006_hoefner_relmics3.pdf"
 bibtex: |
-  @InProceedings{Hoefner2006-9,
-    Author = {H{\"o}fner, Peter and M{\"o}ller, Bernhard},
-    Title = {Lazy Semiring Neighbours and Some Applications},
-    BookTitle = {Relations and Kleene Algebra in Computer Science (RelMiCS/AKA'06)},
-    Editor = {Schmidt, Renate A.},
-    Series = {Lecture Notes in Computer Science},
-    Volume = {4136},
-    Pages = {207-221},
-    Year = {2006},
-    Publisher = {Springer},
-    Doi = {10.1007/11828563_14}
+  @inproceedings{hoefner2006-9,
+    author = {H{\"o}fner, Peter and M{\"o}ller, Bernhard},
+    title     = {{Lazy Semiring Neighbours and Some Applications}},
+    booktitle = {Relations and Kleene Algebra in Computer Science (RelMiCS/AKA'06)},
+    editor = {Schmidt, Renate A.},
+    series = {Lecture Notes in Computer Science},
+    volume = {4136},
+    pages = {207-221},
+    year = {2006},
+    publisher = {Springer},
+    doi = {10.1007/11828563_14}
   }
 ---
 

@@ -14,15 +14,15 @@ doi: "10.1016/j.entcs.2006.09.040"
 url: "https://doi.org/10.1016/j.entcs.2006.09.040"
 pdf: "2007_hoefner_entcs.pdf"
 bibtex: |
-  @article{Hoefner2007-1,
-    Author = {H{\"o}fner, Peter},
-    Title = {Semiring Neighbours: An Algebraic Embedding and Extension of Neighbourhood Logic},
-    Journal = {Electronic Notes in Theoretical Computer Science},
-    Volume = {191},
-    Pages = {49-72},
-    Year = {2007},
-    Publisher = {Elsevier},
-    Doi = {10.1016/j.entcs.2006.09.040}
+  @article{hoefner2007-1,
+    author = {H{\"o}fner, Peter},
+    title     = {{Semiring Neighbours: An Algebraic Embedding and Extension of Neighbourhood Logic}},
+    journal = {Electronic Notes in Theoretical Computer Science},
+    volume = {191},
+    pages = {49-72},
+    year = {2007},
+    publisher = {Elsevier},
+    doi = {10.1016/j.entcs.2006.09.040}
   }
 ---
 

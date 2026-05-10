@@ -12,7 +12,7 @@ pages: "99-111"
 institution: "Heriot-Watt University Edinburgh, Scotland"
 pdf: "2005_hoefner_esslli_phd.pdf"
 bibtex: |
-  @inproceedings{Hoefner2005_ESSLI,
+  @inproceedings{hoefner2005_essli,
     author    = {Peter H{\"o}fner},
     title     = {{An Algebraic Semantics for Duration Calculus}},
     booktitle = {Proceedings of the 10th ESSLLI Student Session},

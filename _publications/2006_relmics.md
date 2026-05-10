@@ -17,16 +17,16 @@ url: "https://doi.org/10.1007/11734673_10"
 pdf: "2006_hoefner_relmics.pdf"
 bibtex: |
   InProceedings{Hoefner2006_relmics,
-    Author = {H{\"o}fner, Peter and M{\"o}ller, Bernhard},
-    Title = {Towards an Algebra of Hybrid Systems},
-    BookTitle = {Relational Methods in Computer Science (RelMiCS8/AKA3)},
-    Editor = {MacCaull, Wendy and Winter, Michael and D{\"u}ntsch, Ivo},
-    Series = {Lecture Notes in Computer Science},
-    Volume = {3929},
-    Pages = {121-133},
-    Year = {2006},
-    Publisher = {Springer},
-    Doi = {10.1007/11734673_10}
+    author = {H{\"o}fner, Peter and M{\"o}ller, Bernhard},
+    title     = {{Towards an Algebra of Hybrid Systems}},
+    booktitle = {Relational Methods in Computer Science (RelMiCS8/AKA3)},
+    editor = {MacCaull, Wendy and Winter, Michael and D{\"u}ntsch, Ivo},
+    series = {Lecture Notes in Computer Science},
+    volume = {3929},
+    pages = {121-133},
+    year = {2006},
+    publisher = {Springer},
+    doi = {10.1007/11734673_10}
   }
 ---
 
