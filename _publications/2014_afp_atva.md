@@ -14,7 +14,9 @@ bibtex: |
     Author  = {Bourke, Timothy and H{\"o}fner, Peter},
     Title   = {Loop Freedom of the (Untimed) {AODV} Routing Protocol},
     Journal = {Archive of Formal Proofs},
-    Year    = {2014}
+    Year    = {2014},
+  note    = {\url{https://isa-afp.org/entries/AODV.html},
+             Formal proof development},
   }
 ---
 

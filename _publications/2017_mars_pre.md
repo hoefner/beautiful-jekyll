@@ -15,7 +15,7 @@ doi: "10.4204/EPTCS.244"
 url: "https://doi.org/10.4204/EPTCS.244"
 preface: "2017_hoefner_mars.pdf"
 bibtex: |
-  @misc{hoefner2017_mars,
+  @book{hoefner2017_mars,
     editor    = {Hermanns, Holger and H{\"o}fner,Peter},
     title     = {{2nd Workshop on Models for Formal Analysis of Real Systems}},
     year      = {2017},

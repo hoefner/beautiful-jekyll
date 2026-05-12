@@ -28,7 +28,7 @@ bibtex: |
     Year = {2018},
     Publisher = {Springer},
     Doi = {10.1007/978-3-030-02149-8_16}
-}
+  }
 ---
 
 Separation logic, an extension of Floyd-Hoare logic, finds countless applications in areas of program verification, but does not allow forward reasoning in the setting of total or generalised correctness. To support forward reasoning, separation logic needs to be equiped with a failure element. We present several ways on how to add such an element. We show that none of the `obvious' extensions preserve all the algebraic properties desired. We develop more complicated models, satisfying the desired properties, and discuss their use for forward reasoning.
