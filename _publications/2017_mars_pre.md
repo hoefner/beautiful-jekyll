@@ -13,6 +13,7 @@ series: "Electronic Proceedings in Theoretical Computer Science"
 volume: "244"
 doi: "10.4204/EPTCS.244"
 url: "https://doi.org/10.4204/EPTCS.244"
+arxiv: "1703.05812"
 preface: "2017_hoefner_mars_pre.pdf"
 bibtex: |
   @book{hoefner2017_mars,

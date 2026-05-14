@@ -1,6 +1,6 @@
 ---
 layout: publication
-id: "2021_5"
+id: "2021_ramics"
 title: "Effect Algebras, Girard Quantales and Complementation in Separation Logic"
 venue_type: conference
 year: 2021

@@ -22,8 +22,8 @@ navbar-links:
   Teaching: "teaching"   # single link to /teaching/ overview page
   Curriculum Vitae: "cv"
   Research Team: "people"
-  Hobbies/Fun:
-    - Acting: "acting"
+#  Hobbies/Fun:
+#    - Acting: "acting"
 #  Resources:
 #    - Beautiful Jekyll: "https://beautifuljekyll.com"
 #    - Learn markdown: "https://www.markdowntutorial.com/"

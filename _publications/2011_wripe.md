@@ -14,6 +14,7 @@ authors:
 booktitle: "Rigorous Protocol Engineering (WRiPE'11)"
 publisher: "IEEE"
 pdf: "2011_hoefner_wripe.pdf"
+arxiv: "1512.07312"
 bibtex: |
   @InProceedings{Hoefner2011-7,
     Author = {Fehnker, Ansgar and van Glabbeek, Rob and H{\"o}fner, Peter and McIver, Annabelle and Portmann, Marius and Tan, Wee Lum},
