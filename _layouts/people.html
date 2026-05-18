@@ -78,7 +78,7 @@ layout: page
     <li class="people-item">
       <span class="people-name">{{ person.name }}</span>
       <span class="people-badge">{{ person.badge }}{% if person.role %} &nbsp;·&nbsp; {{ person.role }}{% endif %}</span>
-      <div class="people-thesis">{{ person.title }}</div>
+      {% if person.title %}<div class="people-thesis">{{ person.title }}</div>{% endif %}
       <div class="people-meta">{{ person.school }} &nbsp;·&nbsp; since {{ person.year }}</div>
     </li>
     {% endfor %}
@@ -95,7 +95,7 @@ layout: page
     <li class="people-item">
       <span class="people-name">{{ person.name }}</span>
       <span class="people-badge">{{ person.badge }}{% if person.role %} &nbsp;·&nbsp; {{ person.role }}{% endif %}</span>
-      <div class="people-thesis">{{ person.title }}</div>
+      {% if person.title %}<div class="people-thesis">{{ person.title }}</div>{% endif %}
       <div class="people-meta">
         {{ person.school }} &nbsp;·&nbsp; {{ person.year }}
         {% if person.note %} &nbsp;·&nbsp; {{ person.note }}{% endif %}
@@ -136,7 +136,7 @@ layout: page
     <li class="people-item">
       <span class="people-name">{{ person.name }}</span>
       <span class="people-badge">{{ person.badge }}</span>
-      <div class="people-thesis">{{ person.title }}</div>
+      {% if person.title %}<div class="people-thesis">{{ person.title }}</div>{% endif %}
       <div class="people-meta">
         {{ person.school }} &nbsp;·&nbsp; {{ person.year }}
         {% if person.note %} &nbsp;·&nbsp; {{ person.note }}{% endif %}

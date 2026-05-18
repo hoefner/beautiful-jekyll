@@ -117,16 +117,18 @@ layout: page
 
 {% if page.venue_type == "journal" %}{% assign badge = "Journal Article" %}
 {% elsif page.venue_type == "conference" %}{% assign badge = "Conference Paper" %}
+{% elsif page.venue_type == "workshop" %}{% assign badge = "Workshop Paper" %}
 {% elsif page.venue_type == "book_chapter" %}{% assign badge = "Book Chapter" %}
 {% elsif page.venue_type == "book" %}{% assign badge = "Book" %}
 {% elsif page.venue_type == "technical_report" %}{% assign badge = "Technical Report" %}
 {% elsif page.venue_type == "afp" %}{% assign badge = "Archive of Formal Proofs" %}
 {% elsif page.venue_type == "misc" %}{% assign badge = page.subtype | default: "Other" %}
 {% endif %}
-<div class="pub-detail-badge">{{ badge }} &nbsp;·&nbsp; {{ page.year }}</div>
+<div class="pub-detail-badge">{{ badge }} &nbsp;·&nbsp; {{ page.year }}{% if page.note %} &nbsp;·&nbsp; <em>{{ page.note }}</em>{% endif %}</div>
 
-{% comment %} ── Authors ── {% endcomment %}
+{% comment %} ── Authors / Editors ── {% endcomment %}
 <div class="pub-detail-section">
+  {% if page.authors %}
   <div class="pub-detail-label">Authors</div>
   <div class="pub-detail-value">
     {% for author in page.authors %}
@@ -137,6 +139,18 @@ layout: page
       {% endif %}
     {% endfor %}
   </div>
+  {% elsif page.editors %}
+  <div class="pub-detail-label">Editors</div>
+  <div class="pub-detail-value">
+    {% for editor in page.editors %}
+      {% if editor contains "Höfner" or editor contains "Hofner" %}
+        <strong>{{ editor }}</strong>{% unless forloop.last %}, {% endunless %}
+      {% else %}
+        {{ editor }}{% unless forloop.last %}, {% endunless %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
 </div>
 
 {% comment %} ── Venue ── {% endcomment %}
@@ -149,6 +163,8 @@ layout: page
       {% if page.number %}, no. {{ page.number }}{% endif %}
       {% if page.pages %}, pp. {{ page.pages }}{% endif %}
       {% if page.publisher %} — {{ page.publisher }}{% endif %}
+    {% elsif page.venue_type == "afp" and page.journal %}
+      <em>{{ page.journal }}</em>
     {% elsif page.booktitle %}
       <em>{{ page.booktitle }}</em>
       {% if page.series %} ({{ page.series }}{% if page.volume %} {{ page.volume }}{% endif %}){% endif %}
@@ -192,7 +208,13 @@ layout: page
 <pre class="bibtex-block">{{ page.bibtex }}</pre>
 {% endif %}
 
-{% if page.pdf and page.venue_type == "journal" or page.pdf and page.venue_type == "conference" or page.pdf and page.venue_type == "book_chapter" %}
+{% assign show_copyright = false %}
+{% if page.pdf %}
+  {% if page.venue_type == "journal" or page.venue_type == "conference" or page.venue_type == "workshop" or page.venue_type == "book_chapter" %}
+    {% assign show_copyright = true %}
+  {% endif %}
+{% endif %}
+{% if show_copyright %}
 <div class="pub-copyright-notice">
   <strong>Copyright Notice:</strong> This material is presented to ensure timely dissemination of scholarly and technical work. Copyright and all rights therein are retained by authors or by other copyright holders such as publishers (Springer, Elsevier, ACM, IEEE). All persons copying this information are expected to adhere to the terms and constraints invoked by each copyright holder. In most cases, these works may not be reposted without explicit permission of the copyright holder.
 </div>

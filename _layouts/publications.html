@@ -4,7 +4,7 @@ layout: page
 
 {{ content }}
 
-{% assign type_order = "journal,conference,book_chapter,book,technical_report,misc" | split: "," %}
+{% assign type_order = "journal,conference,workshop,afp,book_chapter,book,technical_report,misc" | split: "," %}
 
 <style>
   /* ── View toggle ── */
@@ -171,6 +171,8 @@ layout: page
       {% if pubs_of_type.size > 0 %}
         {% if type_key == "journal" %}{% assign label = "Journal Articles" %}
         {% elsif type_key == "conference" %}{% assign label = "Conference Papers" %}
+        {% elsif type_key == "workshop" %}{% assign label = "Workshop Papers" %}
+        {% elsif type_key == "afp" %}{% assign label = "Archive of Formal Proofs" %}
         {% elsif type_key == "book_chapter" %}{% assign label = "Book Chapters" %}
         {% elsif type_key == "book" %}{% assign label = "Books" %}
         {% elsif type_key == "technical_report" %}{% assign label = "Technical Reports (incomplete)" %}
@@ -186,6 +188,8 @@ layout: page
     {% if pubs_of_type.size > 0 %}
       {% if type_key == "journal" %}{% assign label = "Journal Articles" %}
       {% elsif type_key == "conference" %}{% assign label = "Conference Papers" %}
+      {% elsif type_key == "workshop" %}{% assign label = "Workshop Papers" %}
+      {% elsif type_key == "afp" %}{% assign label = "Archive of Formal Proofs" %}
       {% elsif type_key == "book_chapter" %}{% assign label = "Book Chapters" %}
       {% elsif type_key == "book" %}{% assign label = "Books" %}
       {% elsif type_key == "technical_report" %}{% assign label = "Technical Reports (incomplete)" %}
@@ -203,9 +207,10 @@ layout: page
               <li class="pub-item" id="{{ pub.id }}">
                 <div class="pub-title">{{ pub.title }}</div>
                 <div class="pub-authors">
-                  {% assign has_coauthor = false %}
-                  {% for author in pub.authors %}{% unless author contains "Höfner" or author contains "Hofner" %}{% assign has_coauthor = true %}{% endunless %}{% endfor %}
-                  {% if has_coauthor %}with {% for author in pub.authors %}{% unless author contains "Höfner" or author contains "Hofner" %}{{ author }}{% unless forloop.last %}, {% endunless %}{% endunless %}{% endfor %}{% endif %}
+                  {% assign coauthors = "" %}
+                  {% for author in pub.authors %}{% unless author contains "Höfner" or author contains "Hofner" %}{% if coauthors == "" %}{% assign coauthors = author %}{% else %}{% assign coauthors = coauthors | append: ", " | append: author %}{% endif %}{% endunless %}{% endfor %}
+                  {% if coauthors != "" %}with {{ coauthors }}
+                  {% elsif pub.editors %}{% assign edlist = "" %}{% for ed in pub.editors %}{% if edlist == "" %}{% assign edlist = ed %}{% else %}{% assign edlist = edlist | append: ", " | append: ed %}{% endif %}{% endfor %}ed. {{ edlist }}{% endif %}
                 </div>
                 <div class="pub-venue">
                   {% if pub.venue_type == "journal" and pub.journal %}
@@ -213,11 +218,14 @@ layout: page
                     {% if pub.volume %}, vol. {{ pub.volume }}{% endif %}
                     {% if pub.number %}, no. {{ pub.number }}{% endif %}
                     {% if pub.pages %}, pp. {{ pub.pages }}{% endif %}
+                  {% elsif pub.venue_type == "afp" and pub.journal %}
+                    {{ pub.journal }}
                   {% elsif pub.booktitle %}
                     {{ pub.booktitle }}{% if pub.pages %} (pp. {{ pub.pages }}){% endif %}
                   {% endif %}
                   {% if pub.publisher %} — {{ pub.publisher }}{% endif %}
                   {% if pub.series %} ({{ pub.series }}{% if pub.volume %} {{ pub.volume }}{% endif %}){% endif %}
+                  {% if pub.note %} <em style="color:var(--mid-col)">[{{ pub.note }}]</em>{% endif %}
                 </div>
                 <div class="pub-links">
                   {% if pub.bibtex %}<button class="bibtex-toggle" onclick="toggleBibtex(this)">BibTeX</button>{% endif %}
@@ -260,6 +268,8 @@ layout: page
             {{ pub.title }}
             {% if pub.venue_type == "journal" %}{% assign badge = "Journal" %}
             {% elsif pub.venue_type == "conference" %}{% assign badge = "Conference" %}
+            {% elsif pub.venue_type == "workshop" %}{% assign badge = "Workshop" %}
+            {% elsif pub.venue_type == "afp" %}{% assign badge = "AFP" %}
             {% elsif pub.venue_type == "book_chapter" %}{% assign badge = "Book Chapter" %}
             {% elsif pub.venue_type == "book" %}{% assign badge = "Book" %}
             {% elsif pub.venue_type == "technical_report" %}{% assign badge = "Tech Report" %}
@@ -268,9 +278,10 @@ layout: page
             <span class="pub-type-badge">{{ badge }}</span>
           </div>
           <div class="pub-authors">
-            {% assign has_coauthor = false %}
-            {% for author in pub.authors %}{% unless author contains "Höfner" or author contains "Hofner" %}{% assign has_coauthor = true %}{% endunless %}{% endfor %}
-            {% if has_coauthor %}with {% for author in pub.authors %}{% unless author contains "Höfner" or author contains "Hofner" %}{{ author }}{% unless forloop.last %}, {% endunless %}{% endunless %}{% endfor %}{% endif %}
+            {% assign coauthors = "" %}
+            {% for author in pub.authors %}{% unless author contains "Höfner" or author contains "Hofner" %}{% if coauthors == "" %}{% assign coauthors = author %}{% else %}{% assign coauthors = coauthors | append: ", " | append: author %}{% endif %}{% endunless %}{% endfor %}
+            {% if coauthors != "" %}with {{ coauthors }}
+            {% elsif pub.editors %}{% assign edlist = "" %}{% for ed in pub.editors %}{% if edlist == "" %}{% assign edlist = ed %}{% else %}{% assign edlist = edlist | append: ", " | append: ed %}{% endif %}{% endfor %}ed. {{ edlist }}{% endif %}
           </div>
           <div class="pub-venue">
             {% if pub.venue_type == "journal" and pub.journal %}
@@ -278,11 +289,14 @@ layout: page
               {% if pub.volume %}, vol. {{ pub.volume }}{% endif %}
               {% if pub.number %}, no. {{ pub.number }}{% endif %}
               {% if pub.pages %}, pp. {{ pub.pages }}{% endif %}
+            {% elsif pub.venue_type == "afp" and pub.journal %}
+              {{ pub.journal }}
             {% elsif pub.booktitle %}
               {{ pub.booktitle }}{% if pub.pages %} (pp. {{ pub.pages }}){% endif %}
             {% endif %}
             {% if pub.publisher %} — {{ pub.publisher }}{% endif %}
             {% if pub.series %} ({{ pub.series }}{% if pub.volume %} {{ pub.volume }}{% endif %}){% endif %}
+            {% if pub.note %} <em style="color:var(--mid-col)">[{{ pub.note }}]</em>{% endif %}
           </div>
           <div class="pub-links">
             {% if pub.bibtex %}<button class="bibtex-toggle" onclick="toggleBibtex(this)">BibTeX</button>{% endif %}
