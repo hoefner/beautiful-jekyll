@@ -1,6 +1,6 @@
 ---
 layout: publication
-id: "2017_mars"
+id: "2017_mars_pre"
 title: "2nd Workshop on Models for Formal Analysis of Real Systems"
 venue_type: misc
 subtype: "Edited Volume / Special Issue"
@@ -14,7 +14,7 @@ volume: "244"
 doi: "10.4204/EPTCS.244"
 url: "https://doi.org/10.4204/EPTCS.244"
 arxiv: "1703.05812"
-preface: "2017_hoefner_mars_pre.pdf"
+pdf: "2017_hoefner_mars_pre.pdf"
 bibtex: |
   @book{hoefner2017_mars,
     editor    = {Hermanns, Holger and H{\"o}fner,Peter},

@@ -2,7 +2,7 @@
 layout: page
 id: "2025_sarvay"
 name: "Myria Sarvay"
-title: "Open Bisimilarity for the π-Calculus with Mismatch in Isabelle"
+title: "Implementing π-Calculus with Mismatch in Isabelle/HOL based on Nominal Logic"
 school: "Australian National University, Australia"
 badge: "Project"
 group: "other"

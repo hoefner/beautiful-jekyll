@@ -17,17 +17,21 @@ url: "https://doi.org/10.1007/978-3-540-71070-7_5"
 pdf: "2008_hoefner_ijcar.pdf"
 bibtex: |
   @inproceedings{hoefner2008_ijcar,
-    author = {H{\"o}fner, Peter and Struth, Georg},
-    title     = {{On Automating the Calculus of Relations}},
-    booktitle = {Automated Reasoning},
-    editor = {Armando, Alessandro and Baumgartner, Peter and Dowek, Gilles},
-    series = {Lecture Notes in Artificial Intelligence},
-    volume = {5195},
-    pages = {50-66},
-    year = {2008},
-    publisher = {Springer},
-    doi = {10.1007/978-3-540-71070-7_5}
+  author = {H{\"o}fner, Peter and Struth, Georg},
+  title     = {{On Automating the Calculus of Relations}},
+  booktitle = {Automated Reasoning},
+  editor = {Armando, Alessandro and Baumgartner, Peter and Dowek, Gilles},
+  series = {Lecture Notes in Artificial Intelligence},
+  volume = {5195},
+  pages = {50-66},
+  year = {2008},
+  publisher = {Springer},
+  doi = {10.1007/978-3-540-71070-7_5}
   }
+  ---
+
+  Relation algebras provide abstract equational axioms for the calculus of binary relations. They name an established area of mathematics and have found numerous applications in computing. We prove more than hundred theorems of relation algebras with off-the-shelf automated theorem provers. They form a basic calculus from which more advanced applications can be explored. We also present two automation experiments from the formal methods literature. Our results further demonstrate the feasibility of automated deduction with complex algebraic structures. They also open a new perspective for automated deduction in relational formal methods.
+
 ---
 
 Relation algebras provide abstract equational axioms for the calculus of binary relations. They name an established area of mathematics and have found numerous applications in computing. We prove more than hundred theorems of relation algebras with off-the-shelf automated theorem provers. They form a basic calculus from which more advanced applications can be explored. We also present two automation experiments from the formal methods literature. Our results further demonstrate the feasibility of automated deduction with complex algebraic structures. They also open a new perspective for automated deduction in relational formal methods.

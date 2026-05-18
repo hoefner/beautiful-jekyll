@@ -14,16 +14,20 @@ volume: "24"
 number: "4-6"
 note: "Special issue / Festschrift"
 url: "https://link.springer.com/journal/165"
+pdf: ""
 bibtex: |
-  @misc{Hoefner2012_facpre,
-    Editor    = {H{\"o}fner, Peter and van Glabbeek, Rob and Hayes, Ian J.},
-    Title     = {Festschrift in Honour of Carroll Morgan},
-    Journal   = {Formal Aspects of Computing},
-    Volume    = {24},
-    Number    = {4-6},
-    Year      = {2012},
-    Publisher = {Springer}
+  @misc{hoefner2012_facpre,
+  editor    = {H{\"o}fner, Peter and van Glabbeek, Rob and Hayes, Ian J.},
+  title     = {{Festschrift in Honour of Carroll Morgan}},
+  journal   = {Formal Aspects of Computing},
+  volume    = {24},
+  number    = {4-6},
+  year      = {2012},
+  publisher = {Springer}
   }
+  ---
+
+  Special issue of Formal Aspects of Computing published in honour of Carroll Morgan, edited by Peter Höfner, Rob van Glabbeek, and Ian J. Hayes.
 ---
 
 Special issue of Formal Aspects of Computing published in honour of Carroll Morgan, edited by Peter Höfner, Rob van Glabbeek, and Ian J. Hayes.

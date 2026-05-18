@@ -15,15 +15,17 @@ journal: "Journal of Logical and Algebraic Methods in Programming"
 publisher: "Elsevier"
 volume: "85"
 number: "2"
-preface: "2016_hoefner_jlamppre.pdf"
+pdf: "2016_hoefner_jlamppre.pdf"
 bibtex: |
   @book{hoefner2016_jlamppre,
-    editor    = {H{\"o}fner, Peter and Jipsen, Peter and Kahl, Wolfram and M{\"u}ller, Martin E.},
-    title     = {{Special Issue on Relational and Algebraic Methods in Computer Science (RAMiCS 2014)}},
-    journal = "Journal of Logical and Algebraic Methods in Programming",
-    volume = {85},
-    number = {2},
-    year      = {2016},
-    publisher = {Elsevier}
+  editor    = {H{\"o}fner, Peter and Jipsen, Peter and Kahl, Wolfram and M{\"u}ller, Martin E.},
+  title     = {{Special Issue on Relational and Algebraic Methods in Computer Science (RAMiCS 2014)}},
+  journal = "Journal of Logical and Algebraic Methods in Programming",
+  volume = {85},
+  number = {2},
+  year      = {2016},
+  publisher = {Elsevier}
   }
+  ---
+
 ---

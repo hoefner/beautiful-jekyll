@@ -14,14 +14,16 @@ journal: "Journal of Logical and Algebraic Methods in Programming"
 publisher: "Elsevier"
 volume: "84"
 number: "3"
-preface: "2015_hoefner_jlamp.pdf"
+pdf: "2015_hoefner_jlamp.pdf"
 bibtex: |
   @book{hoefner2015_jlamp,
-    author    = {Kahl, Wolfram and Griffin, Timothy G. and H{\"o}fner, Peter},
-    title     = {{13th International Conference on Relational and Algebraic Methods in Computer Science (RAMiCS 2012)}},
-    year      = {2015},
-    series = {Journal of Logical and Algebraic Methods in Programming},
-    volume = {84},
-    publisher = {Elsevier}
+  author    = {Kahl, Wolfram and Griffin, Timothy G. and H{\"o}fner, Peter},
+  title     = {{13th International Conference on Relational and Algebraic Methods in Computer Science (RAMiCS 2012)}},
+  year      = {2015},
+  series = {Journal of Logical and Algebraic Methods in Programming},
+  volume = {84},
+  publisher = {Elsevier}
   }
+  ---
+
 ---

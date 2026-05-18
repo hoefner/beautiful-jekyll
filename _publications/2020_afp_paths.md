@@ -9,16 +9,22 @@ authors:
   - "Walter Guttmann"
   - "Peter Höfner"
 journal: "Archive of Formal Proofs"
+url: "https://isa-afp.org/entries/Relational_Paths.html"
+pdf: ""
 bibtex: |
   @misc{guttmann2020,
-    author    = {Guttmann, Walter and
-                 H{\"o}fner, Peter},
-    title     = {{Relational Characterisations of Paths}},
+  author    = {Guttmann, Walter and
+  H{\"o}fner, Peter},
+  title     = {{Relational Characterisations of Paths}},
   journal = {Archive of Formal Proofs},
-    year      = {2020},
+  year      = {2020},
   note    = {\url{https://isa-afp.org/entries/Relational_Paths.html},
-             Formal proof development},
+  Formal proof development},
   }
+  ---
+
+  Binary relations are one of the standard ways to encode, characterise and reason about graphs. Relation algebras provide equational axioms for a large fragment of the calculus of binary relations. Although relations are standard tools in many areas of mathematics and computing, researchers usually fall back to point-wise reasoning when it comes to arguments about paths in a graph. We present a purely algebraic way to specify different kinds of paths in Kleene relation algebras, which are relation algebras equipped with an operation for reflexive transitive closure. We study the relationship between paths with a designated root vertex and paths without such a vertex. Since we stay in first-order logic this development helps with mechanising proofs. To demonstrate the applicability of the algebraic framework we verify the correctness of three basic graph algorithms.
+
 ---
 
 Binary relations are one of the standard ways to encode, characterise and reason about graphs. Relation algebras provide equational axioms for a large fragment of the calculus of binary relations. Although relations are standard tools in many areas of mathematics and computing, researchers usually fall back to point-wise reasoning when it comes to arguments about paths in a graph. We present a purely algebraic way to specify different kinds of paths in Kleene relation algebras, which are relation algebras equipped with an operation for reflexive transitive closure. We study the relationship between paths with a designated root vertex and paths without such a vertex. Since we stay in first-order logic this development helps with mechanising proofs. To demonstrate the applicability of the algebraic framework we verify the correctness of three basic graph algorithms.
