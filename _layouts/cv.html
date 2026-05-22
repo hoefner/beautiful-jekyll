@@ -21,14 +21,17 @@ layout: page
     border-radius: 2rem;
     font-family: var(--header-font);
     font-size: 0.875rem;
-    color: var(--text-col);
+    color: var(--navbar-text-col);
     text-decoration: none;
     background: var(--navbar-col);
     transition: background 0.15s, color 0.15s;
   }
+  .cv-nav a:visited {
+    color: var(--navbar-text-col);
+  }
   .cv-nav a:hover {
     background: var(--hover-col);
-    color: var(--page-col);
+    color: var(--navbar-text-col);
     border-color: var(--hover-col);
     text-decoration: none;
   }
@@ -93,6 +96,7 @@ layout: page
     border-radius: 0.25rem;
     padding: 0.75rem 1rem;
     font-size: 0.875rem; line-height: 1.8;
+    color: var(--navbar-text-col);
   }
   .pc-block.open { display: block; }
 

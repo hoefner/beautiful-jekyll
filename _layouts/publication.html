@@ -60,21 +60,27 @@ layout: page
     border-radius: 2rem;
     font-family: var(--header-font);
     font-size: 0.875rem;
-    color: var(--link-col);
+    color: var(--navbar-text-col);
     text-decoration: none;
     background: var(--navbar-col);
     transition: background 0.15s, color 0.15s;
   }
+  .pub-detail-link:visited {
+    color: var(--navbar-text-col);
+  }
   .pub-detail-link:hover {
     background: var(--hover-col);
-    color: var(--page-col);
+    color: var(--navbar-text-col);
     border-color: var(--hover-col);
     text-decoration: none;
   }
   .pub-detail-link.primary {
     background: var(--link-col);
-    color: var(--page-col);
+    color: var(--navbar-text-col);
     border-color: var(--link-col);
+  }
+  .pub-detail-link.primary:visited {
+    color: var(--navbar-text-col);
   }
   .pub-detail-link.primary:hover {
     background: var(--hover-col);
@@ -100,7 +106,7 @@ layout: page
     background: var(--navbar-col);
     border-left: 3px solid var(--navbar-border-col);
     font-size: 0.8rem;
-    color: var(--mid-col);
+    color: var(--navbar-text-col);
     line-height: 1.5;
   }
   .pub-back {

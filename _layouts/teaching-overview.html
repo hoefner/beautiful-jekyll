@@ -22,14 +22,17 @@ layout: page
     border-radius: 2rem;
     font-family: var(--header-font);
     font-size: 0.875rem;
-    color: var(--text-col);
+    color: var(--navbar-text-col);
     text-decoration: none;
     background: var(--navbar-col);
     transition: background 0.15s, color 0.15s;
   }
+  .teach-nav a:visited {
+    color: var(--navbar-text-col);
+  }
   .teach-nav a:hover {
     background: var(--hover-col);
-    color: var(--page-col);
+    color: var(--navbar-text-col);
     border-color: var(--hover-col);
     text-decoration: none;
   }
@@ -69,17 +72,17 @@ layout: page
     font-size: 0.875rem;
     cursor: pointer;
     background: var(--navbar-col);
-    color: var(--text-col);
+    color: var(--navbar-text-col);
     transition: background 0.15s, color 0.15s;
   }
   .teach-view-btn.active {
     background: var(--link-col);
-    color: var(--page-col);
+    color: var(--navbar-text-col);
     border-color: var(--link-col);
   }
   .teach-view-btn:hover:not(.active) {
     background: var(--hover-col);
-    color: var(--page-col);
+    color: var(--navbar-text-col);
     border-color: var(--hover-col);
   }
   .teach-type-badge {
@@ -90,7 +93,7 @@ layout: page
     margin-left: 0.5rem;
     background: var(--navbar-col);
     border: 1px solid var(--navbar-border-col);
-    color: var(--mid-col);
+    color: var(--navbar-text-col);
     vertical-align: middle;
     font-family: var(--header-font);
     font-weight: normal;
