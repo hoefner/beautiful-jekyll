@@ -1,0 +1,245 @@
+---
+layout: page
+---
+
+{{ content }}
+
+{% assign type_order = "keynote,invited,seminar,tutorial,contributed" | split: "," %}
+
+<style>
+  /* ── View toggle ── */
+  .pub-view-toggle {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1.5rem 0 0;
+  }
+  .pub-view-btn {
+    padding: 0.3rem 1rem;
+    border: 1px solid var(--navbar-border-col);
+    border-radius: 2rem;
+    font-family: var(--header-font);
+    font-size: 0.875rem;
+    cursor: pointer;
+    background: var(--navbar-col);
+    color: var(--navbar-text-col);
+    transition: background 0.15s, color 0.15s;
+  }
+  .pub-view-btn.active {
+    background: var(--link-col);
+    color: var(--navbar-text-col);
+    border-color: var(--link-col);
+  }
+  .pub-view-btn:hover:not(.active) {
+    background: var(--hover-col);
+    color: var(--navbar-text-col);
+    border-color: var(--hover-col);
+  }
+
+  /* ── Type navigation pills ── */
+  .pub-type-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0 2rem;
+    padding: 0;
+    list-style: none;
+  }
+  .pub-type-nav a {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border: 1px solid var(--navbar-border-col);
+    border-radius: 2rem;
+    font-family: var(--header-font);
+    font-size: 0.875rem;
+    color: var(--navbar-text-col);
+    text-decoration: none;
+    background: var(--navbar-col);
+    transition: background 0.15s, color 0.15s;
+  }
+  .pub-type-nav a:visited { color: var(--navbar-text-col); }
+  .pub-type-nav a:hover {
+    background: var(--hover-col);
+    color: var(--navbar-text-col);
+    border-color: var(--hover-col);
+    text-decoration: none;
+  }
+
+  /* ── Section & year headings ── */
+  .pub-type-section { margin-top: 2.5rem; }
+  .pub-type-heading {
+    font-family: var(--header-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    border-bottom: 2px solid var(--navbar-border-col);
+    padding-bottom: 0.35rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-col);
+  }
+  .pub-year-heading {
+    font-family: var(--header-font);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--mid-col);
+    margin: 1.25rem 0 0.5rem;
+  }
+
+  /* ── Presentation list ── */
+  .pub-list { list-style: none; padding: 0; margin: 0; }
+  .pub-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--navbar-border-col);
+    line-height: 1.5;
+  }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-title { font-weight: 700; color: var(--text-col); }
+  .pub-venue { font-size: 0.95rem; font-style: italic; }
+  .pub-location { font-size: 0.9rem; color: var(--mid-col); margin: 0.1rem 0; }
+  .pub-type-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-style: normal;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.75rem;
+    margin-left: 0.5rem;
+    background: var(--navbar-col);
+    border: 1px solid var(--navbar-border-col);
+    color: var(--navbar-text-col);
+    vertical-align: middle;
+    font-family: var(--header-font);
+  }
+  .pub-links { margin-top: 0.35rem; font-size: 0.875rem; }
+  .pub-links a {
+    margin-right: 0.75rem;
+    color: var(--link-col);
+    text-decoration: none;
+  }
+  .pub-links a:visited { color: var(--link-col); }
+  .pub-links a:hover { color: var(--hover-col); text-decoration: underline; }
+
+  /* ── View containers ── */
+  #pres-view-by-type { display: none; }
+  #pres-view-by-year { display: block; }
+</style>
+
+{% comment %} ── View toggle buttons ── {% endcomment %}
+<div class="pub-view-toggle">
+  <button class="pub-view-btn"        onclick="switchPresView('type', this)">By Type</button>
+  <button class="pub-view-btn active" onclick="switchPresView('year', this)">By Year</button>
+</div>
+
+
+{% comment %} ════════════════════════════════
+   VIEW 1 — BY TYPE
+════════════════════════════════ {% endcomment %}
+<div id="pres-view-by-type">
+
+  <ul class="pub-type-nav">
+    {% for type_key in type_order %}
+      {% assign items = site.presentations | where: "venue_type", type_key %}
+      {% if items.size > 0 %}
+        {% if type_key == "keynote"     %}{% assign label = "Keynote Talks" %}
+        {% elsif type_key == "invited"  %}{% assign label = "Invited Talks" %}
+        {% elsif type_key == "seminar"  %}{% assign label = "Seminars & Colloquia" %}
+        {% elsif type_key == "tutorial" %}{% assign label = "Tutorials" %}
+        {% elsif type_key == "contributed" %}{% assign label = "Contributed Talks" %}
+        {% endif %}
+        <li><a href="#pres-{{ type_key }}">{{ label }} ({{ items.size }})</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  {% for type_key in type_order %}
+    {% assign items = site.presentations | where: "venue_type", type_key | sort: "year" | reverse %}
+    {% if items.size > 0 %}
+      {% if type_key == "keynote"     %}{% assign label = "Keynote Talks" %}
+      {% elsif type_key == "invited"  %}{% assign label = "Invited Talks" %}
+      {% elsif type_key == "seminar"  %}{% assign label = "Seminars & Colloquia" %}
+      {% elsif type_key == "tutorial" %}{% assign label = "Tutorials" %}
+      {% elsif type_key == "contributed" %}{% assign label = "Contributed Talks" %}
+      {% endif %}
+
+      <section class="pub-type-section" id="pres-{{ type_key }}">
+        <h2 class="pub-type-heading">{{ label }}</h2>
+        {% assign years = items | map: "year" | uniq %}
+        {% for year in years %}
+          <h3 class="pub-year-heading">{{ year }}</h3>
+          <ul class="pub-list">
+            {% for pres in items %}
+              {% if pres.year == year %}
+              <li class="pub-item">
+                <div class="pub-title">{{ pres.title }}</div>
+                {% if pres.venue %}<div class="pub-venue">{{ pres.venue }}</div>{% endif %}
+                {% if pres.location %}<div class="pub-location">{{ pres.location }}</div>{% endif %}
+                {% if pres.pdf or pres.url or pres.note %}
+                <div class="pub-links">
+                  {% if pres.pdf %}<a href="/assets/pdf_presentations/{{ pres.pdf }}" target="_blank" rel="noopener">Slides</a>{% endif %}
+                  {% if pres.url %}<a href="{{ pres.url }}" target="_blank" rel="noopener">Link</a>{% endif %}
+                  {% if pres.note %}<span style="color:var(--mid-col)">[{{ pres.note }}]</span>{% endif %}
+                </div>
+                {% endif %}
+              </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </section>
+    {% endif %}
+  {% endfor %}
+
+</div><!-- /pres-view-by-type -->
+
+
+{% comment %} ════════════════════════════════
+   VIEW 2 — BY YEAR
+════════════════════════════════ {% endcomment %}
+<div id="pres-view-by-year">
+
+  {% assign all_pres = site.presentations | sort: "year" | reverse %}
+  {% assign all_years = all_pres | map: "year" | uniq %}
+
+  <p style="margin: 1rem 0 1.5rem; font-size:0.9rem; color:var(--mid-col);">
+    {{ all_pres.size }} presentations total
+  </p>
+
+  {% for year in all_years %}
+    <h2 class="pub-type-heading" style="margin-top:2rem;">{{ year }}</h2>
+    <ul class="pub-list">
+      {% for pres in all_pres %}
+        {% if pres.year == year %}
+        <li class="pub-item">
+          <div class="pub-title">
+            {{ pres.title }}
+            {% if pres.venue_type == "keynote"     %}{% assign badge = "Keynote" %}
+            {% elsif pres.venue_type == "invited"  %}{% assign badge = "Invited" %}
+            {% elsif pres.venue_type == "seminar"  %}{% assign badge = "Seminar" %}
+            {% elsif pres.venue_type == "tutorial" %}{% assign badge = "Tutorial" %}
+            {% elsif pres.venue_type == "contributed" %}{% assign badge = "Contributed" %}
+            {% endif %}
+            {% if badge %}<span class="pub-type-badge">{{ badge }}</span>{% endif %}
+          </div>
+          {% if pres.venue %}<div class="pub-venue">{{ pres.venue }}</div>{% endif %}
+          {% if pres.location %}<div class="pub-location">{{ pres.location }}</div>{% endif %}
+          {% if pres.pdf or pres.url or pres.note %}
+          <div class="pub-links">
+            {% if pres.pdf %}<a href="/assets/pdf_presentations/{{ pres.pdf }}" target="_blank" rel="noopener">Slides</a>{% endif %}
+            {% if pres.url %}<a href="{{ pres.url }}" target="_blank" rel="noopener">Link</a>{% endif %}
+            {% if pres.note %}<span style="color:var(--mid-col)">[{{ pres.note }}]</span>{% endif %}
+          </div>
+          {% endif %}
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endfor %}
+
+</div><!-- /pres-view-by-year -->
+
+
+<script>
+function switchPresView(mode, btn) {
+  document.getElementById('pres-view-by-type').style.display = (mode === 'type') ? 'block' : 'none';
+  document.getElementById('pres-view-by-year').style.display = (mode === 'year') ? 'block' : 'none';
+  document.querySelectorAll('.pub-view-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+</script>

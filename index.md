@@ -11,4 +11,4 @@ Before joining ANU in 2020, I spent nearly a decade as a (Principal) Research Sc
 
 ---
 
-**Explore:** &nbsp; [Publications](/publications/) &nbsp;·&nbsp; [Teaching](/teaching/) &nbsp;·&nbsp;  [CV](/cv/)
+**Explore:** &nbsp; [Research](/research/) &nbsp;·&nbsp; [Education](/education/) &nbsp;·&nbsp;  [CV](/cv/)

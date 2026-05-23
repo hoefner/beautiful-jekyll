@@ -18,10 +18,15 @@ keywords: "Peter Höfner, Peter Hoefner, Hoefner, formal methods, ANU, Australia
 
 navbar-links:
 #  About Me: "aboutme"
-  Publications: "publications"
-  Teaching: "teaching"   # single link to /teaching/ overview page
+  Research:
+    - _link: "research"
+    - Publications: "publications"
+    - Presentations: "presentations"
+    - Research Team: "people"
+  Education:
+    - _link: "education"
+    - Lectures & Courses: "teaching"
   Curriculum Vitae: "cv"
-  Research Team: "people"
 #  Hobbies/Fun:
 #    - Acting: "acting"
 #  Resources:
@@ -120,7 +125,7 @@ edit_page_button: true
 # Allow sub-menu items (second-level navigation menu items) to be longer than the top-level menu
 # If this setting is off, then long sub-menu words might get cut off
 # See https://github.com/daattali/beautiful-jekyll/issues/765 to understand the issue this setting can solve
-navbar-var-length: false
+navbar-var-length: true
 
 ######################################
 # --- Colours / background image --- #
@@ -218,6 +223,8 @@ collections:
     publications:
         output: true
         permalink: /publications/:name
+    presentations:
+        output: false
     teaching:
         output: false        # individual pages not needed; overview page handles display
     people:

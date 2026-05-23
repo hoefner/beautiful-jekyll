@@ -1,5 +1,5 @@
 ---
 layout: teaching-overview
-title: Teaching
+title: Lectures & Courses
 permalink: /teaching/
 ---
