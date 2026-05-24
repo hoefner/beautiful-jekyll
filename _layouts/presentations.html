@@ -170,10 +170,9 @@ layout: page
                 <div class="pub-title">{{ pres.title }}</div>
                 {% if pres.venue %}<div class="pub-venue">{{ pres.venue }}</div>{% endif %}
                 {% if pres.location %}<div class="pub-location">{{ pres.location }}</div>{% endif %}
-                {% if pres.pdf or pres.url or pres.note %}
+                {% if pres.pdf or pres.note %}
                 <div class="pub-links">
                   {% if pres.pdf %}<a href="/assets/pdf_presentations/{{ pres.pdf }}" target="_blank" rel="noopener">Slides</a>{% endif %}
-                  {% if pres.url %}<a href="{{ pres.url }}" target="_blank" rel="noopener">Link</a>{% endif %}
                   {% if pres.note %}<span style="color:var(--mid-col)">[{{ pres.note }}]</span>{% endif %}
                 </div>
                 {% endif %}
@@ -219,10 +218,9 @@ layout: page
           </div>
           {% if pres.venue %}<div class="pub-venue">{{ pres.venue }}</div>{% endif %}
           {% if pres.location %}<div class="pub-location">{{ pres.location }}</div>{% endif %}
-          {% if pres.pdf or pres.url or pres.note %}
+          {% if pres.pdf or pres.note %}
           <div class="pub-links">
             {% if pres.pdf %}<a href="/assets/pdf_presentations/{{ pres.pdf }}" target="_blank" rel="noopener">Slides</a>{% endif %}
-            {% if pres.url %}<a href="{{ pres.url }}" target="_blank" rel="noopener">Link</a>{% endif %}
             {% if pres.note %}<span style="color:var(--mid-col)">[{{ pres.note }}]</span>{% endif %}
           </div>
           {% endif %}

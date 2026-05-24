@@ -184,10 +184,21 @@ layout: page
   </div>
 </div>
 
+{% comment %} ── Book cover + metadata ── {% endcomment %}
+{% if page.cover_image %}
+<div class="pub-detail-section" style="overflow:hidden;">
+  <a href="/assets/img/{{ page.cover_image_large | default: page.cover_image }}" target="_blank" rel="noopener">
+    <img src="/assets/img/{{ page.cover_image }}" alt="Book cover" style="float:right; width:150px; margin:0 0 1rem 1.5rem; border:1px solid var(--navbar-border-col);">
+  </a>
+  {% if page.isbn %}<div class="pub-detail-label">ISBN</div><div class="pub-detail-value" style="margin-bottom:0.5rem;">{{ page.isbn }}</div>{% endif %}
+  {% if page.book_pages %}<div class="pub-detail-label">Pages</div><div class="pub-detail-value">{{ page.book_pages }}</div>{% endif %}
+</div>
+{% endif %}
+
 {% comment %} ── Abstract ── {% endcomment %}
 {% if content and content != "" %}
 <div class="pub-detail-section">
-  <div class="pub-detail-label">Abstract</div>
+  <div class="pub-detail-label">{% if page.venue_type == "book" %}Description{% else %}Abstract{% endif %}</div>
   <div class="pub-detail-abstract">{{ content }}</div>
 </div>
 {% endif %}
@@ -196,7 +207,7 @@ layout: page
 <div class="pub-detail-links">
   {% if page.doi %}
     <a class="pub-detail-link primary" href="https://doi.org/{{ page.doi }}" target="_blank" rel="noopener">DOI</a>
-  {% elsif page.url %}
+  {% elsif page.url contains "http" %}
     <a class="pub-detail-link primary" href="{{ page.url }}" target="_blank" rel="noopener">Link</a>
   {% endif %}
   {% if page.arxiv %}
@@ -212,6 +223,32 @@ layout: page
 
 {% if page.bibtex %}
 <pre class="bibtex-block">{{ page.bibtex }}</pre>
+{% endif %}
+
+{% comment %} ── Purchase links (books) ── {% endcomment %}
+{% if page.purchase_links %}
+<div class="pub-detail-section">
+  <div class="pub-detail-label">Purchase</div>
+  <div class="pub-detail-links" style="margin-top:0.5rem; padding-top:0; border-top:none;">
+    {% for pl in page.purchase_links %}
+      <a class="pub-detail-link" href="{{ pl.url }}" target="_blank" rel="noopener">{{ pl.label }}</a>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% comment %} ── Data files (books) ── {% endcomment %}
+{% if page.data_files %}
+<div class="pub-detail-section">
+  <div class="pub-detail-label">Data</div>
+  <div class="pub-detail-value">
+    <p>Most proofs have been verified with <a href="http://www.cs.unm.edu/~mccune/prover9/" target="_blank" rel="noopener">Prover9</a> (version LADR-April-2007).</p>
+    {% for df in page.data_files %}
+      <a class="pub-detail-link" href="/assets/data/{{ df.file }}" target="_blank" rel="noopener">{{ df.label }}</a>&nbsp;
+    {% endfor %}
+    <p style="font-size:0.85rem; color:var(--mid-col); margin-top:0.75rem;">Proofs were generated on May 14, 2014 on a 2.8 GHz Intel Core i7, 8 GB RAM MacBook Pro — running times are shorter than those indicated in the thesis. Note: some input files may not run with newer Prover9 versions (e.g. LADR-Dec-2007); the axiom selection mechanism appears to have changed in later versions.</p>
+  </div>
+</div>
 {% endif %}
 
 {% assign show_copyright = false %}
