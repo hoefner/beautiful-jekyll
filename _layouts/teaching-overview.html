@@ -126,7 +126,7 @@ layout: page
         {% for item in items %}
         <li class="teach-item">
           <div class="teach-title">
-            {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+            {% if item.url and item.url contains "://" %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
             {% else %}{{ item.title }}{% endif %}
           </div>
           <div class="teach-school">{{ item.school }}</div>
@@ -160,7 +160,7 @@ layout: page
         {% if item.year == year %}
         <li class="teach-item">
           <div class="teach-title">
-            {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+            {% if item.url and item.url contains "://" %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
             {% else %}{{ item.title }}{% endif %}
             <span class="teach-type-badge">{{ item.type }}</span>
           </div>

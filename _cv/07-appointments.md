@@ -10,7 +10,7 @@ order: 7
     <td class="cv-date">since Feb 2020</td>
     <td class="cv-body">
       <strong>Professor (promoted 2026, tenured 2023)</strong>
-      <span class="inst"><a href="https://cecs.anu.edu.au" target="_blank" rel="noopener">Australian National University</a>, Australia</span>
+      <span class="inst"><a href="https://comp.anu.edu.au" target="_blank" rel="noopener">Australian National University</a>, Australia</span>
       <span class="inst">Associate Director of Education, School of Computing (Apr 2022&ndash;Apr 2026)</span>
       <span class="inst">Acting Head of School, School of Computing (recurring)</span>
     </td>

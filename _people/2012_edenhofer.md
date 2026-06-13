@@ -10,5 +10,5 @@ year: "March 2012"
 sort_year: 2012
 current: false
 note: "in German"
-pdf: "2012_edenhofer.pdf"
+# pdf: "2012_edenhofer.pdf"   # uncomment once the file lands in assets/pdf_theses/
 ---

@@ -1,10 +1,10 @@
 ---
 layout: page
 title: About Me
-subtitle: Professor · Associate Director Education · Sometimes on Stage
+subtitle: Professor · Theorem Prover · Scene Filler
 ---
 
-Dr Peter Höfner is a Professor at the [Australian National University (ANU)](https://cecs.anu.edu.au), which he joined in February 2020. He regularly serves as Acting Head of the School of Computing. Before joining ANU, he worked for nearly a decade as a (Principal) Research Scientist at [Data61, CSIRO](https://www.data61.csiro.au) (formerly NICTA). In parallel, he held concurrent appointments as Conjoint Associate Professor at the University of New South Wales (UNSW) and Honorary Senior Research Fellow at Macquarie University. Earlier in his career, he was a Postdoctoral Fellow at the University of Augsburg, Germany.
+Dr Peter Höfner is a Professor at the [Australian National University (ANU)](https://comp.anu.edu.au), which he joined in February 2020. He regularly serves as Acting Head of the School of Computing. Before joining ANU, he worked for nearly a decade as a (Principal) Research Scientist at [Data61, CSIRO](https://www.data61.csiro.au) (formerly NICTA). In parallel, he held concurrent appointments as Conjoint Associate Professor at the University of New South Wales (UNSW) and Honorary Senior Research Fellow at Macquarie University. Earlier in his career, he was a Postdoctoral Fellow at the University of Augsburg, Germany.
 
 ### Research
 
@@ -16,7 +16,7 @@ To realise his research vision, Peter collaborates with leading researchers worl
 
 ### Education
 
-As Associate Director of Education within the ANU School of Computing, Peter combines his scientific vision with a commitment to rigorous curriculum development and educational innovation. He leads the design and transformation of curricula across eight computing programs and five diplomas, supporting over 6,000 student enrolments per semester — over 10% of ANU's total student body. He is the academic lead for the Australian Computer Society (ACS) accreditation of ANU's computing programs, critical for students' visa eligibility and professional practice pathways.
+As Associate Director of Education within the ANU School of Computing (2022–2026), Peter combined his scientific vision with a commitment to rigorous curriculum development and educational innovation. He led the design and transformation of curricula across eight computing programs and five diplomas, supporting over 6,000 student enrolments per semester — over 10% of ANU's total student body. He was the academic lead for the Australian Computer Society (ACS) accreditation of ANU's computing programs, critical for students' visa eligibility and professional practice pathways.
 
 Peter redesigned [COMP3610/6361 Principles of Programming Languages](https://programsandcourses.anu.edu.au/course/comp3610) and created the new course [COMP4011/8011 Advanced Topics in Formal Methods and Programming Languages](https://programsandcourses.anu.edu.au/course/comp4011) (2024), offering students cutting-edge knowledge at the intersection of software verification theory and practice. He also designed and launched a New Convenor Workshop for early-career academics, a model subsequently adopted across the College of Systems and Society.
 
