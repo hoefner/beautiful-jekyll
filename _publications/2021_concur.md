@@ -31,10 +31,6 @@ bibtex: |
   publisher = {Schloss Dagstuhl -- Leibniz-Zentrum für Informatik},
   doi = {10.4230/LIPIcs.CONCUR.2021.33}
   }
-  ---
-
-  Most fairness assumptions used for verifying liveness properties are criticised for being too strong or unrealistic. On the other hand, justness, arguably the minimal fairness assumption required for the verification of liveness properties, is not preserved by classical semantic equivalences, such as strong bisimilarity. To overcome this deficiency, we introduce a finer alternative to strong bisimilarity, called enabling preserving bisimilarity. We prove that this equivalence is justness-preserving and a congruence for all standard operators, including parallel composition.
-
 ---
 
 Most fairness assumptions used for verifying liveness properties are criticised for being too strong or unrealistic. On the other hand, justness, arguably the minimal fairness assumption required for the verification of liveness properties, is not preserved by classical semantic equivalences, such as strong bisimilarity. To overcome this deficiency, we introduce a finer alternative to strong bisimilarity, called enabling preserving bisimilarity. We prove that this equivalence is justness-preserving and a congruence for all standard operators, including parallel composition.

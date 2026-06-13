@@ -34,10 +34,6 @@ bibtex: |
   pages     = {59--75},
   doi       = {10.4204/EPTCS.387.6}
   }
-  ---
-
-  Enabling preserving bisimilarity is a refinement of strong bisimilarity that preserves safety as well as liveness properties. To define it properly, labelled transition systems needed to be upgraded with a successor relation, capturing concurrency between transitions enabled in the same state. We enrich the well-known De Simone format to handle inductive definitions of this successor relation. We then establish that ep-bisimilarity is a congruence for the operators, as well as lean congruence for recursion, for all (enriched) De Simone languages.
-
 ---
 
 Enabling preserving bisimilarity is a refinement of strong bisimilarity that preserves safety as well as liveness properties. To define it properly, labelled transition systems needed to be upgraded with a successor relation, capturing concurrency between transitions enabled in the same state. We enrich the well-known De Simone format to handle inductive definitions of this successor relation. We then establish that ep-bisimilarity is a congruence for the operators, as well as lean congruence for recursion, for all (enriched) De Simone languages.

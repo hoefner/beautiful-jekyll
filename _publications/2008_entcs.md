@@ -27,10 +27,6 @@ bibtex: |
   publisher = {Elsevier},
   doi = {10.1016/j.entcs.2008.04.099}
   }
-  ---
-
-  Web Services and Service-Oriented Architecture in general are promising concepts to overcome difficulties such as heterogeneity, scalability, etc. In this paper we present an algebraic structure of Web Services which assist users in Web Service composition and formal description of their services. Using relation algebra, tests and iteration offer the possibility of an automatic composition of Web Services based on a specified goal.
-
 ---
 
 Web Services and Service-Oriented Architecture in general are promising concepts to overcome difficulties such as heterogeneity, scalability, etc. In this paper we present an algebraic structure of Web Services which assist users in Web Service composition and formal description of their services. Using relation algebra, tests and iteration offer the possibility of an automatic composition of Web Services based on a specified goal.

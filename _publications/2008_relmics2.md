@@ -27,10 +27,6 @@ bibtex: |
   publisher = {Springer},
   doi = {10.1007/978-3-540-78913-0_15}
   }
-  ---
-
-  At an abstract level hybrid systems are related to variants of Kleene algebra. Since it has recently been shown that Kleene algebras and their variants, like omega algebras, provide a reasonable base for automated reasoning, the aim of the present paper is to show that automated algebraic reasoning for hybrid system is feasible. We mainly focus on applications. In particular, we present case studies and proof experiments to show how concrete properties of hybrid systems, like safety and liveness, can be algebraically characterised and how off-the-shelf automated theorem provers can be used to verify them.
-
 ---
 
 At an abstract level hybrid systems are related to variants of Kleene algebra. Since it has recently been shown that Kleene algebras and their variants, like omega algebras, provide a reasonable base for automated reasoning, the aim of the present paper is to show that automated algebraic reasoning for hybrid system is feasible. We mainly focus on applications. In particular, we present case studies and proof experiments to show how concrete properties of hybrid systems, like safety and liveness, can be algebraically characterised and how off-the-shelf automated theorem provers can be used to verify them.

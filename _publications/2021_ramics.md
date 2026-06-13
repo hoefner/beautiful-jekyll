@@ -29,10 +29,6 @@ bibtex: |
   publisher = {Springer},
   doi = {10.1007/978-3-030-88701-8_3}
   }
-  ---
-
-  We study convolution and residual operations within convolution quantales of maps from partial abelian semigroups and effect algebras into value quantales, thus generalising separating conjunction and implication of separation logic to quantitative settings. We show that effect algebras lift to Girard convolution quantales, but not the standard partial abelian monoids used in separation logic. It follows that the standard assertion quantales of separation logic do not admit a linear negation relating convolution and its right adjoint. We consider alternative dualities for these operations on convolution quantales using boolean negations, some old, some new, relate them with properties of the underlying partial abelian semigroups and outline potential uses.
-
 ---
 
 We study convolution and residual operations within convolution quantales of maps from partial abelian semigroups and effect algebras into value quantales, thus generalising separating conjunction and implication of separation logic to quantitative settings. We show that effect algebras lift to Girard convolution quantales, but not the standard partial abelian monoids used in separation logic. It follows that the standard assertion quantales of separation logic do not admit a linear negation relating convolution and its right adjoint. We consider alternative dualities for these operations on convolution quantales using boolean negations, some old, some new, relate them with properties of the underlying partial abelian semigroups and outline potential uses.

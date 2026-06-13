@@ -24,6 +24,4 @@ bibtex: |
   volume = {84},
   publisher = {Elsevier}
   }
-  ---
-
 ---

@@ -21,10 +21,8 @@ bibtex: |
   title     = {{Relational and Algebraic Methods in Computer Science}},
   year      = {2017},
   series ={Lecture Notes in Computer Science},
-  volume.  =.  {10226}, 
+  volume    = {10226},
   publisher = {Springer},
   doi       = {10.1007/978-3-319-57418-9}
   }
-  ---
-
 ---

@@ -29,10 +29,6 @@ bibtex: |
   publisher = {Springer},
   doi = {10.1007/978-3-642-21070-9_11}
   }
-  ---
-
-  When reasoning within separation logic, it is often necessary to provide side conditions for inference rules. These side conditions usually contain information about variables and their use, and are given within a meta-language, i.e., the side conditions cannot be encoded in separation logic itself. In this paper we discuss different possibilities how side conditions of variables—occurring e.g. in the ordinary or the hypothetical frame rule—can be characterised using algebraic separation logic. We also study greatest relations; a concept used in the soundness proof of the hypothetical frame rule. We provide one and only one level of abstraction for the logic, the side conditions and the greatest relations.
-
 ---
 
 When reasoning within separation logic, it is often necessary to provide side conditions for inference rules. These side conditions usually contain information about variables and their use, and are given within a meta-language, i.e., the side conditions cannot be encoded in separation logic itself. In this paper we discuss different possibilities how side conditions of variables—occurring e.g. in the ordinary or the hypothetical frame rule—can be characterised using algebraic separation logic. We also study greatest relations; a concept used in the soundness proof of the hypothetical frame rule. We provide one and only one level of abstraction for the logic, the side conditions and the greatest relations.

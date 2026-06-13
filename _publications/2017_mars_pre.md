@@ -23,6 +23,6 @@ bibtex: |
     series ={Electronic Proceedings in Theoretical Computer Science},
     volume = {244},
     publisher = {Open Publishing Association},
-    doi: "10.4204/EPTCS.244"
+    doi = {10.4204/EPTCS.244}
   }
 ---

@@ -27,10 +27,6 @@ bibtex: |
   publisher = {ACM},
   doi = {10.1145/2507924.2507943}
   }
-  ---
-
-  In the area of mobile ad-hoc networks and wireless mesh networks, sequence numbers are often used in routing protocols to avoid routing loops.  It is commonly stated in protocol specifications that  sequence numbers are sufficient to _guarantee_ loop freedom if they are monotonically increased over time.  A classical example for the use of sequence numbers is the popular Ad hoc On-Demand Distance Vector (AODV) routing protocol.  The loop freedom of AODV is not only  a common belief, it has been claimed in the abstract of its RFC and at least two proofs have been proposed. AODV-based protocols such as AODVv2 (DYMO) and  HWMP also claim loop freedom due to the same use of sequence numbers.   In this paper we show that AODV is not a priori loop free; by this we counter the proposed proofs in the literature. In fact, loop freedom hinges on non-evident assumptions to be made when resolving ambiguities occurring in the RFC.  Thus, monotonically increasing sequence numbers, by themselves, do  _not_ guarantee loop freedom.
-
 ---
 
 In the area of mobile ad-hoc networks and wireless mesh networks, sequence numbers are often used in routing protocols to avoid routing loops.  It is commonly stated in protocol specifications that  sequence numbers are sufficient to _guarantee_ loop freedom if they are monotonically increased over time.  A classical example for the use of sequence numbers is the popular Ad hoc On-Demand Distance Vector (AODV) routing protocol.  The loop freedom of AODV is not only  a common belief, it has been claimed in the abstract of its RFC and at least two proofs have been proposed. AODV-based protocols such as AODVv2 (DYMO) and  HWMP also claim loop freedom due to the same use of sequence numbers.   In this paper we show that AODV is not a priori loop free; by this we counter the proposed proofs in the literature. In fact, loop freedom hinges on non-evident assumptions to be made when resolving ambiguities occurring in the RFC.  Thus, monotonically increasing sequence numbers, by themselves, do  _not_ guarantee loop freedom.

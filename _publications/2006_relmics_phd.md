@@ -21,8 +21,5 @@ bibtex: |
   pages = {55-59},
   year = {2006}
   }
-  ---
-  When describing iterations or loops it is well known and common to use the Kleene star. We first show an example for iteration, where the star operation is not adequate, since it just iterate and do not modify the iterated element. Therefore we introduce, as a generalisation of Kleene algebra, the structure of _f_-generated Kleene algebra, that have an iteration operation which depends on a function _f_ and modify the iterated element in each step.
-
 ---
 When describing iterations or loops it is well known and common to use the Kleene star. We first show an example for iteration, where the star operation is not adequate, since it just iterate and do not modify the iterated element. Therefore we introduce, as a generalisation of Kleene algebra, the structure of _f_-generated Kleene algebra, that have an iteration operation which depends on a function _f_ and modify the iterated element in each step.

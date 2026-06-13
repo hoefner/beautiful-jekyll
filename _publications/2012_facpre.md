@@ -25,9 +25,6 @@ bibtex: |
   year      = {2012},
   publisher = {Springer}
   }
-  ---
-
-  Special issue of Formal Aspects of Computing published in honour of Carroll Morgan, edited by Peter Höfner, Rob van Glabbeek, and Ian J. Hayes.
 ---
 
 Special issue of Formal Aspects of Computing published in honour of Carroll Morgan, edited by Peter Höfner, Rob van Glabbeek, and Ian J. Hayes.

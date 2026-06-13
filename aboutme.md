@@ -1,10 +1,10 @@
 ---
 layout: page
 title: About Me
-subtitle: Associate Professor · Associate Director Education · Sometimes on Stage
+subtitle: Professor · Associate Director Education · Sometimes on Stage
 ---
 
-Dr Peter Höfner is an Associate Professor at the [Australian National University (ANU)](https://cecs.anu.edu.au), a position he has held since February 2020, and regularly serves as Acting Head of the School of Computing. Before joining ANU, he worked for nearly a decade as a (Principal) Research Scientist at [Data61, CSIRO](https://www.data61.csiro.au) (formerly NICTA). In parallel, he held concurrent appointments as Conjoint Associate Professor at the University of New South Wales (UNSW) and Honorary Senior Research Fellow at Macquarie University. Earlier in his career, he was a Postdoctoral Fellow at the University of Augsburg, Germany.
+Dr Peter Höfner is a Professor at the [Australian National University (ANU)](https://cecs.anu.edu.au), which he joined in February 2020. He regularly serves as Acting Head of the School of Computing. Before joining ANU, he worked for nearly a decade as a (Principal) Research Scientist at [Data61, CSIRO](https://www.data61.csiro.au) (formerly NICTA). In parallel, he held concurrent appointments as Conjoint Associate Professor at the University of New South Wales (UNSW) and Honorary Senior Research Fellow at Macquarie University. Earlier in his career, he was a Postdoctoral Fellow at the University of Augsburg, Germany.
 
 ### Research
 

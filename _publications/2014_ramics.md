@@ -30,10 +30,6 @@ bibtex: |
   publisher = {Springer},
   doi = {10.1007/978-3-319-06251-8_11}
   }
-  ---
-
-  Software verification is essential for safety-critical systems. In this paper, we illustrate that some verification tasks can be done fully automatically. We show how to automatically verify imperative programs for relation-based discrete structures by combining relation algebra and the well-known assertion-based verification method with automated theorem proving. We present two examples in detail: a relational program for determining the reflexive-transitive closure and a topological sorting algorithm. We also treat the automatic verification of the equivalence of common-logical and relation-algebraic specifications.
-
 ---
 
 Software verification is essential for safety-critical systems. In this paper, we illustrate that some verification tasks can be done fully automatically. We show how to automatically verify imperative programs for relation-based discrete structures by combining relation algebra and the well-known assertion-based verification method with automated theorem proving. We present two examples in detail: a relational program for determining the reflexive-transitive closure and a topological sorting algorithm. We also treat the automatic verification of the equivalence of common-logical and relation-algebraic specifications.

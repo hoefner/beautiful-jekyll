@@ -26,6 +26,4 @@ bibtex: |
   year      = {2016},
   publisher = {Elsevier}
   }
-  ---
-
 ---

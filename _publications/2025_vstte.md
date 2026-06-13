@@ -12,10 +12,6 @@ authors:
   - "Roger C. Su"
 publisher: "Springer"
 series: "Lecture Notes in Computer Science"
-volume: ""
-pages: ""
-doi: ""
-url: ""
 pdf: "2025_hoefner_vstte.pdf"
 note: "in press"
 bibtex: |
@@ -25,16 +21,10 @@ bibtex: |
   booktitle = {Verified Software: Theories, Tools, and Experiments (VSTTE 2025)},
   editor = {Pit-Claudel, Cl{\'e}ment and Kosaian, Katherine},
   series = {Lecture Notes in Computer Science},
-  volume = {},
-  pages = {},
   year = {2025},
   publisher = {Springer},
-  doi = {},
   note = {(in press)}
   }
-  ---
-
-  To support rely-guarantee reasoning, we present an extension to Isabelle/HOL's built-in library, which we use to verify a hierarchy of queue locks. The framework incorporates novel features of Isabelle, and enables flexible syntax, assertion-annotations, and tactics for both automated and structured proofs. Assertion-annotations enable elegant top-down specification from an abstract queue lock to a non-trivial, practical circular-buffer queue lock.
 ---
 
 To support rely-guarantee reasoning, we present an extension to Isabelle/HOL's built-in library, which we use to verify a hierarchy of queue locks. The framework incorporates novel features of Isabelle, and enables flexible syntax, assertion-annotations, and tactics for both automated and structured proofs. Assertion-annotations enable elegant top-down specification from an abstract queue lock to a non-trivial, practical circular-buffer queue lock.

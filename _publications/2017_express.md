@@ -31,10 +31,6 @@ bibtex: |
   pages     = {18--34},
   doi       = {10.4204/EPTCS.255.2},
   }
-  ---
-
-  In contrast to common belief, the Calculus of Communicating Systems (CCS) and similar process algebras lack the expressive power to accurately capture mutual exclusion protocols without enriching the language with fairness assumptions. Adding a fairness assumption to implement a mutual exclusion protocol seems counter-intuitive. We employ a signalling operator, which can be combined with CCS, or other process calculi, and show that this minimal extension is expressive enough to model mutual exclusion: we confirm the correctness of Peterson's mutual exclusion algorithm for two processes, as well as Lamport's bakery algorithm, under reasonable assumptions on the underlying memory model. The correctness of Peterson's algorithm for more than two processes requires stronger, less realistic assumptions on the underlying memory model.
-
 ---
 
 In contrast to common belief, the Calculus of Communicating Systems (CCS) and similar process algebras lack the expressive power to accurately capture mutual exclusion protocols without enriching the language with fairness assumptions. Adding a fairness assumption to implement a mutual exclusion protocol seems counter-intuitive. We employ a signalling operator, which can be combined with CCS, or other process calculi, and show that this minimal extension is expressive enough to model mutual exclusion: we confirm the correctness of Peterson's mutual exclusion algorithm for two processes, as well as Lamport's bakery algorithm, under reasonable assumptions on the underlying memory model. The correctness of Peterson's algorithm for more than two processes requires stronger, less realistic assumptions on the underlying memory model.

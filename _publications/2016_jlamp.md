@@ -29,10 +29,6 @@ bibtex: |
   publisher = {Elsevier},
   doi = {10.1016/j.jlamp.2015.12.001}
   }
-  ---
-
-  First, we discuss three specific classes of relations, which allow to model the essential constituents of graphs, such as vertices and (directed or undirected) edges. Based on Kawahara’s characterisation of the cardinality of relations we then derive fundamental properties on their cardinalities. As main applications of these results, we formally verify four relational programs, which implement approximation algorithms by using the assertion-based method and relation-algebraic calculations.
-
 ---
 
 First, we discuss three specific classes of relations, which allow to model the essential constituents of graphs, such as vertices and (directed or undirected) edges. Based on Kawahara’s characterisation of the cardinality of relations we then derive fundamental properties on their cardinalities. As main applications of these results, we formally verify four relational programs, which implement approximation algorithms by using the assertion-based method and relation-algebraic calculations.

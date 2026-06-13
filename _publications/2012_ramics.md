@@ -30,10 +30,6 @@ bibtex: |
   publisher = {Springer},
   doi = {10.1007/978-3-642-33314-9_3}
   }
-  ---
-
-  In 2011, simple and concise axioms for feature compositions, interactions and products have been proposed by Batory et al. They were mainly inspired by Kästner's Colored IDE (CIDE) as well as by experience in feature oriented programming over the last decades. However, so far only axioms were proposed; consequences of these axioms such as variability in models have not been studied. In this paper we discuss the proposed axioms from a theoretical point of view, which yields a much better understanding of the proposed algebra and therefore of feature oriented programming. For example, we show that the axioms characterising feature composition are isomorphic to set-theoretic models.
-
 ---
 
 In 2011, simple and concise axioms for feature compositions, interactions and products have been proposed by Batory et al. They were mainly inspired by Kästner's Colored IDE (CIDE) as well as by experience in feature oriented programming over the last decades. However, so far only axioms were proposed; consequences of these axioms such as variability in models have not been studied. In this paper we discuss the proposed axioms from a theoretical point of view, which yields a much better understanding of the proposed algebra and therefore of feature oriented programming. For example, we show that the axioms characterising feature composition are isomorphic to set-theoretic models.

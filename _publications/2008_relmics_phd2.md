@@ -22,10 +22,6 @@ bibtex: |
   pages = {68-72},
   year = {2008}
   }
-  ---
-
-  To realise a software that needs to interact with other com- puters, service-oriented architecture and especially Web Services are gain- ing more and more attention. Existing components need to be composed in order to reach a predefined goal. For Web Services this can be realised using data defined in WSDL or using semantic Web Services such as SAWSDL. We apply relation algebra to describe Web Services as well as the composition of existing semantic Web Services.
-
 ---
 
 To realise a software that needs to interact with other com- puters, service-oriented architecture and especially Web Services are gain- ing more and more attention. Existing components need to be composed in order to reach a predefined goal. For Web Services this can be realised using data defined in WSDL or using semantic Web Services such as SAWSDL. We apply relation algebra to describe Web Services as well as the composition of existing semantic Web Services.

@@ -32,11 +32,6 @@ bibtex: |
   publisher = {Springer},
   doi = {10.1007/978-3-642-40229-6_9}
   }
-  ---
-
-  Wireless Mesh Networks (WMNs) are self-organising ad-hoc networks that support broadband communication. Due to changes in topology, route discovery and maintenance play a crucial role in the reliability and performance of such networks. Formal analysis of WMNs using exhaustive model checking techniques is often infeasible because large network sizes and topology changes yield state-space explosion. Statistical model checking can overcome this limitation and enables quantitative analysis.
-
-  In this paper we illustrate this through a detailed analysis of the Ad hoc On-demand Distance Vector (AODV) routing protocol. We show that some optional features of AODV are not useful and that AODV exhibits unexpected behaviour, yielding a high probability of route discovery failure.
 ---
 
 Wireless Mesh Networks (WMNs) are self-organising ad-hoc networks that support broadband communication. Due to changes in topology, route discovery and maintenance play a crucial role in the reliability and performance of such networks. Formal analysis of WMNs using exhaustive model checking techniques is often infeasible because large network sizes and topology changes yield state-space explosion. Statistical model checking can overcome this limitation and enables quantitative analysis.

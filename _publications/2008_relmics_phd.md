@@ -22,10 +22,6 @@ bibtex: |
   pages = {48-52},
   year = {2008}
   }
-  ---
-
-  Recently it has been shown that off-the-shelf first-order automated theorem provers can successfully verify statements of substantial complexity in relation and Kleene algebras. Until now most of our proof automation had been done using McCune's theorem prover Prover9, while others like SPASS and Vampire were not used extensively. In this paper we use more than $500$ theorems to compare and evaluate 13 first-order theorem provers.
-
 ---
 
 Recently it has been shown that off-the-shelf first-order automated theorem provers can successfully verify statements of substantial complexity in relation and Kleene algebras. Until now most of our proof automation had been done using McCune's theorem prover Prover9, while others like SPASS and Vampire were not used extensively. In this paper we use more than $500$ theorems to compare and evaluate 13 first-order theorem provers.

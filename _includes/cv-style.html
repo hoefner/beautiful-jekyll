@@ -1,0 +1,107 @@
+<style>
+  /* ── Jump nav ── */
+  .cv-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+    list-style: none;
+  }
+  .cv-nav a {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border: 1px solid var(--navbar-border-col);
+    border-radius: 2rem;
+    font-family: var(--header-font);
+    font-size: 0.875rem;
+    color: var(--navbar-text-col);
+    text-decoration: none;
+    background: var(--navbar-col);
+    transition: background 0.15s, color 0.15s;
+  }
+  .cv-nav a:visited {
+    color: var(--navbar-text-col);
+  }
+  .cv-nav a:hover {
+    background: var(--hover-col);
+    color: var(--navbar-text-col);
+    border-color: var(--hover-col);
+    text-decoration: none;
+  }
+
+  /* ── Section headings ── */
+  .cv-section { margin-top: 2.5rem; }
+  .cv-heading {
+    font-family: var(--header-font);
+    font-size: 1.4rem;
+    font-weight: 800;
+    border-bottom: 2px solid var(--navbar-border-col);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.2rem;
+    color: var(--link-col);
+  }
+  .cv-subheading {
+    font-family: var(--header-font);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-col);
+    margin: 1.25rem 0 0.5rem;
+  }
+
+  /* ── Table layout for timeline entries ── */
+  .cv-table { width: 100%; border-collapse: collapse; margin-bottom: 0.5rem; }
+  .cv-table tr { border-bottom: 1px solid var(--navbar-border-col); }
+  .cv-table tr:last-child { border-bottom: none; }
+  .cv-table td { padding: 0.55rem 0.5rem 0.55rem 0; vertical-align: top; font-size: 0.95rem; line-height: 1.5; }
+  .cv-date { width: 11rem; color: var(--mid-col); white-space: nowrap; }
+  .cv-body strong { display: block; font-weight: 700; color: var(--text-col); }
+  .cv-body .inst { font-style: italic; color: var(--mid-col); font-size: 0.9rem; }
+  .cv-body a { color: var(--link-col); text-decoration: none; }
+  .cv-body a:hover { color: var(--hover-col); text-decoration: underline; }
+
+  /* ── Awards ── */
+  .cv-award { padding: 0.4rem 0; border-bottom: 1px solid var(--navbar-border-col); }
+  .cv-award:last-child { border-bottom: none; }
+  .cv-award-year { font-weight: 700; color: var(--link-col); margin-right: 0.75rem; }
+
+  /* ── Grants ── */
+  .grant-item { padding: 0.5rem 0; border-bottom: 1px solid var(--navbar-border-col); font-size: 0.95rem; }
+  .grant-item:last-child { border-bottom: none; }
+  .grant-title { font-weight: 700; }
+  .grant-meta { color: var(--mid-col); font-size: 0.875rem; }
+
+  /* ── Service ── */
+  .svc-item { padding: 0.4rem 0; border-bottom: 1px solid var(--navbar-border-col); font-size: 0.95rem; line-height: 1.5; }
+  .svc-item:last-child { border-bottom: none; }
+  .svc-role { font-weight: 700; margin-right: 0.5rem; }
+
+  /* ── PC list (collapsed) ── */
+  .pc-toggle {
+    background: none; border: none; padding: 0;
+    font-size: 0.875rem; color: var(--link-col); cursor: pointer;
+    font-family: var(--header-font);
+  }
+  .pc-toggle:hover { color: var(--hover-col); text-decoration: underline; }
+  .pc-block {
+    display: none; margin-top: 0.5rem;
+    background: var(--navbar-col);
+    border: 1px solid var(--navbar-border-col);
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem; line-height: 1.8;
+    color: var(--navbar-text-col);
+  }
+  .pc-block.open { display: block; }
+
+  /* ── Research interests ── */
+  .ri-section { margin-bottom: 0.75rem; }
+  .ri-top { font-weight: 700; color: var(--text-col); margin-bottom: 0.25rem; }
+  .ri-sub { padding-left: 1.25rem; color: var(--mid-col); font-size: 0.9rem; line-height: 1.7; }
+
+  /* ── Expertise list ── */
+  .expertise-list { list-style: none; padding: 0; margin: 0; }
+  .expertise-list li { padding: 0.35rem 0; border-bottom: 1px solid var(--navbar-border-col); font-size: 0.95rem; }
+  .expertise-list li:last-child { border-bottom: none; }
+  .expertise-list strong { color: var(--text-col); }
+</style>

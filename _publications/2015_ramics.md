@@ -30,10 +30,6 @@ bibtex: |
   publisher = {Springer},
   doi = {10.1007/978-3-319-24704-5_17}
   }
-  ---
-
-  We present different approaches of using a special purpose computer algebra system and theorem provers in software verification. To this end, we first develop a purely algebraic while-program for computing a vertex coloring of an undirected (loop-free) graph. For showing its correctness, we then combine the well-known assertion-based verification method with relation-algebraic calculations. Based on this, we show how automatically to test loop-invariants by means of the RelView tool and also compare the usage of three different theorem provers in respect to the verification of the proof obligations: the automated theorem prover Prover9 and the two proof assistants Coq and Isabelle/HOL. As a result, we illustrate that algebraic abstraction yields verification tasks that can easily be verified with off-the-shelf theorem provers, but also reveal some shortcomings and difficulties with theorem provers that are nowadays available.
-
 ---
 
 We present different approaches of using a special purpose computer algebra system and theorem provers in software verification. To this end, we first develop a purely algebraic while-program for computing a vertex coloring of an undirected (loop-free) graph. For showing its correctness, we then combine the well-known assertion-based verification method with relation-algebraic calculations. Based on this, we show how automatically to test loop-invariants by means of the RelView tool and also compare the usage of three different theorem provers in respect to the verification of the proof obligations: the automated theorem prover Prover9 and the two proof assistants Coq and Isabelle/HOL. As a result, we illustrate that algebraic abstraction yields verification tasks that can easily be verified with off-the-shelf theorem provers, but also reveal some shortcomings and difficulties with theorem provers that are nowadays available.

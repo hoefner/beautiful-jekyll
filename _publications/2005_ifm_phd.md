@@ -21,8 +21,5 @@ bibtex: |
   pages = {6-13},
   year = {2005}
   }
-  ---
-  Advanced personalization techniques are required to cope with novel challenges posed by attribute-rich digital libraries. At the heart of our deeply personalized alerting system is one extensible preference model that serves all purposes in conjunction with our search technology Preference XPath and XML-based semantic annotations of digital library objects. In this paper we focus on the impact of automatic query expansion by ontologies. First results indicate that use of ontologies improves the quality of the result set and generates further results of higher quality.
-
 ---
 Advanced personalization techniques are required to cope with novel challenges posed by attribute-rich digital libraries. At the heart of our deeply personalized alerting system is one extensible preference model that serves all purposes in conjunction with our search technology Preference XPath and XML-based semantic annotations of digital library objects. In this paper we focus on the impact of automatic query expansion by ontologies. First results indicate that use of ontologies improves the quality of the result set and generates further results of higher quality.

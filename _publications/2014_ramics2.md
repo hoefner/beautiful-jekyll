@@ -25,6 +25,4 @@ bibtex: |
   year      = {2014},
   publisher = {Springer}
   }
-  ---
-
 ---

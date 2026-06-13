@@ -28,10 +28,6 @@ bibtex: |
   publisher = {Springer},
   doi = {10.1007/11828563_14}
   }
-  ---
-
-  We extend an earlier algebraic approach to Neighbourhood Logic (NL) from domain semirings to lazy semi-rings yielding lazy semiring neighbours. Furthermore we show three important applications for these. The first one extends NL to intervals with infinite length. The second one applies lazy semiring neighbours in an algebraic semantics of the branching time temporal logic CTL*. The third one sets up a connection between hybrid systems and lazy semiring neighbours.
-
 ---
 
 We extend an earlier algebraic approach to Neighbourhood Logic (NL) from domain semirings to lazy semi-rings yielding lazy semiring neighbours. Furthermore we show three important applications for these. The first one extends NL to intervals with infinite length. The second one applies lazy semiring neighbours in an algebraic semantics of the branching time temporal logic CTL*. The third one sets up a connection between hybrid systems and lazy semiring neighbours.

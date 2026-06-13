@@ -28,10 +28,6 @@ bibtex: |
   publisher = {Springer},
   doi = {10.1007/978-3-540-78913-0_16}
   }
-  ---
-
-  We study and compare two notions of non-termination on idempotent semirings: infinite iteration and divergence. We determine them in various models and develop conditions for their coincidence. It turns out that divergence yields a simple and natural way of modelling infinite behaviour, whereas infinite iteration shows some anomalies.
-
 ---
 
 We study and compare two notions of non-termination on idempotent semirings: infinite iteration and divergence. We determine them in various models and develop conditions for their coincidence. It turns out that divergence yields a simple and natural way of modelling infinite behaviour, whereas infinite iteration shows some anomalies.

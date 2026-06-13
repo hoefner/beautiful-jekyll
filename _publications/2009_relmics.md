@@ -29,10 +29,6 @@ bibtex: |
   publisher = {Springer},
   doi = {10.1007/978-3-642-04639-1_5}
   }
-  ---
-
-  We present an algebraic approach to separation logic. In particular, we give algebraic characterisations for all constructs of separation logic. The algebraic view does not only yield new insights on separation logic but also shortens proofs and enables the use of automated theorem provers for verifying properties at a more abstract level.
-
 ---
 
 We present an algebraic approach to separation logic. In particular, we give algebraic characterisations for all constructs of separation logic. The algebraic view does not only yield new insights on separation logic but also shortens proofs and enables the use of automated theorem provers for verifying properties at a more abstract level.
