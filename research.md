@@ -13,4 +13,5 @@ To realise his research vision, Peter collaborates with leading researchers worl
 ---
 
 - [Publications](/publications/) — full list of 100+ peer-reviewed articles
+- [Presentations](/presentations/) — invited talks, keynotes, and conference presentations
 - [Research Team](/people/) — current and former group members

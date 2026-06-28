@@ -21,6 +21,7 @@ bundle exec jekyll clean         # Remove _site/ and .jekyll-cache/
 - `_publications/` — 150+ files, each generates its own page at `/publications/:name`
 - `_teaching/` — 28 files, rendered only via the teaching overview page (no individual pages)
 - `_people/` — 80 files, rendered only via the people overview page (no individual pages)
+- `_grants/` — one file per grant; rendered only via the CV "Grants" section (`_cv/09-grants.md`)
 
 **Layouts** (`_layouts/`): Custom templates including `publication.html`, `cv.html`, `people.html`, `teaching-overview.html`. These override Beautiful Jekyll defaults.
 

@@ -41,6 +41,7 @@ permalink: /onstage/
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 20%; /* bias crop toward upper part — faces, not torsos */
     transition: transform 0.3s;
     display: block;
   }
