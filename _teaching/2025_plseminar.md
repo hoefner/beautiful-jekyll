@@ -1,6 +1,6 @@
 ---
 layout: page
-id: "2025_popl"
+id: "2025_plseminar"
 title: "Programming Languages Seminar"
 type: "Seminar"
 school: "Australian National University, Australia"
